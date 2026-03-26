@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Catalogue | JANKA ATELIER</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@300;400;600&family=Manrope:wght@200;300;400;600&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <link href="CSTYLE.css" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-tint": "#735c00",
+                        "inverse-primary": "#e9c349",
+                        "on-error-container": "#93000a",
+                        "surface-container-highest": "#e5e2e1",
+                        "secondary-container": "#e2dfde",
+                        "primary-container": "#d4af37",
+                        "primary": "#735c00",
+                        "surface-variant": "#e5e2e1",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "primary-fixed": "#ffe088",
+                        "surface-container-high": "#eae7e7",
+                        "surface": "#fcf9f8",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed-dim": "#e3c37b",
+                        "primary-fixed-dim": "#e9c349",
+                        "error-container": "#ffdad6",
+                        "on-background": "#1c1b1b",
+                        "on-surface-variant": "#4d4635",
+                        "on-error": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#5f5e5e",
+                        "surface-dim": "#dcd9d9",
+                        "tertiary-fixed": "#ffdf9a",
+                        "on-surface": "#1c1b1b",
+                        "on-primary": "#ffffff",
+                        "outline": "#7f7663",
+                        "on-secondary": "#ffffff",
+                        "surface-container": "#f0eded",
+                        "on-primary-fixed": "#241a00",
+                        "inverse-on-surface": "#f3f0ef",
+                        "on-secondary-container": "#636262",
+                        "on-tertiary-fixed": "#251a00",
+                        "on-primary-fixed-variant": "#574500",
+                        "on-tertiary": "#ffffff",
+                        "tertiary": "#735b1e",
+                        "surface-bright": "#fcf9f8",
+                        "background": "#fcf9f8",
+                        "on-tertiary-fixed-variant": "#594405",
+                        "on-primary-container": "#554300",
+                        "on-secondary-fixed-variant": "#474746",
+                        "inverse-surface": "#313030",
+                        "secondary-fixed": "#e5e2e1",
+                        "outline-variant": "#d0c5af",
+                        "surface-container-low": "#f6f3f2",
+                        "on-tertiary-container": "#574204",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "tertiary-container": "#ceaf69"
+                    },
+                    fontFamily: {
+                        "headline": ["Noto Serif"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    },
+                    borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface manrope selection:bg-primary-container selection:text-on-primary-container">
+
+<!-- TopNavBar -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-[#fcf9f8]/80 dark:bg-[#1c1b1b]/80 backdrop-blur-md no-border bg-surface-container-low/50">
+    <div class="flex justify-between items-center w-full px-12 py-6 max-w-[1920px] mx-auto">
+        <div class="flex items-center gap-12">
+            <a class="font-noto-serif text-3xl font-light tracking-widest text-[#1c1b1b] dark:text-[#fcf9f8]" href="#">JANKA</a>
+            <div class="hidden md:flex gap-8">
+                <a class="manrope text-xs uppercase tracking-[0.1rem] text-[#1c1b1b] dark:text-[#fcf9f8] opacity-70 hover:opacity-100 hover:text-[#735c00] transition-all duration-300" href="HOMEPAGE.html">Collections</a>
+                <a class="manrope text-xs uppercase tracking-[0.1rem] text-[#735c00] dark:text-[#d4af37] border-b border-[#735c00] pb-1 hover:opacity-100 hover:text-[#735c00] transition-all duration-300" href="#">Catalogue</a>
+                <a class="text-[#1c1b1b] dark:text-[#fcf9f8] opacity-80 hover:opacity-100 hover:text-[#735c00] transition-all duration-300 font-label text-xs uppercase tracking-widest" href="REGISTER.html">Register</a>
+                <a class="manrope text-xs uppercase tracking-[0.1rem] text-[#1c1b1b] dark:text-[#fcf9f8] opacity-70 hover:opacity-100 hover:text-[#735c00] transition-all duration-300" href="#">Feedback</a>
+            </div>
+        </div>
+        <div class="flex items-center gap-8">
+            <div class="hidden lg:flex items-center border-b border-outline-variant/50 px-2 py-1">
+                <span class="material-symbols-outlined text-sm text-secondary">search</span>
+                <input class="bg-transparent border-none focus:ring-0 text-xs manrope uppercase tracking-widest w-40 placeholder:text-secondary/50" placeholder="Search" type="text"/>
+            </div>
+            <div class="flex items-center gap-6 text-[#1c1b1b] dark:text-[#fcf9f8]">
+                <button class="hover:text-primary transition-colors"><span class="material-symbols-outlined">favorite</span></button>
+                <button class="hover:text-primary transition-colors"><span class="material-symbols-outlined">shopping_bag</span></button>
+                <button class="hover:text-primary transition-colors"><span class="material-symbols-outlined">person</span></button>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<main class="pt-32 pb-24">
+    <!-- Hero Header -->
+    <header class="px-12 mb-16 max-w-[1920px] mx-auto">
+        <h1 class="noto-serif text-6xl font-light tracking-tight text-on-surface mb-4">The Catalogue</h1>
+        <p class="manrope text-secondary max-w-xl font-light leading-relaxed">A curated collection of bespoke craftsmanship, where heritage meets modern elegance. Each piece is a testament to the artisan's soul.</p>
+    </header>
+
+    <!-- Main Layout -->
+    <div class="px-12 max-w-[1920px] mx-auto flex flex-col lg:flex-row gap-16">
+
+        <!-- Filter Sidebar -->
+        <aside class="w-full lg:w-64 flex-shrink-0 space-y-12">
+            <div>
+                <h3 class="manrope text-[10px] uppercase tracking-[0.2rem] text-primary font-bold mb-6">Category</h3>
+                <div class="space-y-3">
+                    <label class="flex items-center gap-3 cursor-pointer group">
+                        <input checked="" class="w-4 h-4 border-outline-variant text-primary focus:ring-primary rounded-none" type="checkbox"/>
+                        <span class="manrope text-sm font-light group-hover:text-primary transition-colors">Rings</span>
+                    </label>
+                    <label class="flex items-center gap-3 cursor-pointer group">
+                        <input checked="" class="w-4 h-4 border-outline-variant text-primary focus:ring-primary rounded-none" type="checkbox"/>
+                        <span class="manrope text-sm font-light group-hover:text-primary transition-colors">Necklaces</span>
+                    </label>
+                    <label class="flex items-center gap-3 cursor-pointer group">
+                        <input checked="" class="w-4 h-4 border-outline-variant text-primary focus:ring-primary rounded-none" type="checkbox"/>
+                        <span class="manrope text-sm font-light group-hover:text-primary transition-colors">Earrings</span>
+                    </label>
+                    <label class="flex items-center gap-3 cursor-pointer group">
+                        <input checked="" class="w-4 h-4 border-outline-variant text-primary focus:ring-primary rounded-none" type="checkbox"/>
+                        <span class="manrope text-sm font-light group-hover:text-primary transition-colors">Bracelets</span>
+                    </label>
+                </div>
+            </div>
+            <div>
+                <h3 class="manrope text-[10px] uppercase tracking-[0.2rem] text-primary font-bold mb-6">Material</h3>
+                <div class="space-y-3">
+                    <label class="flex items-center gap-3 cursor-pointer group">
+                        <input class="w-4 h-4 border-outline-variant text-primary focus:ring-primary" name="material" type="radio"/>
+                        <span class="manrope text-sm font-light group-hover:text-primary transition-colors">18K Yellow Gold</span>
+                    </label>
+                    <label class="flex items-center gap-3 cursor-pointer group">
+                        <input class="w-4 h-4 border-outline-variant text-primary focus:ring-primary" name="material" type="radio"/>
+                        <span class="manrope text-sm font-light group-hover:text-primary transition-colors">Rose Gold</span>
+                    </label>
+                    <label class="flex items-center gap-3 cursor-pointer group">
+                        <input class="w-4 h-4 border-outline-variant text-primary focus:ring-primary" name="material" type="radio"/>
+                        <span class="manrope text-sm font-light group-hover:text-primary transition-colors">Platinum</span>
+                    </label>
+                </div>
+            </div>
+            <div>
+                <h3 class="manrope text-[10px] uppercase tracking-[0.2rem] text-primary font-bold mb-6">Price Range</h3>
+                <input class="w-full h-1 bg-surface-container-high rounded-none appearance-none cursor-pointer accent-primary" type="range"/>
+                <div class="flex justify-between mt-2 manrope text-[10px] text-secondary tracking-widest">
+                    <span>₹25,000</span>
+                    <span>₹5,00,000+</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Product Display Area -->
+        <div class="flex-grow">
+
+            <!-- Category Section: Rings -->
+            <section class="mb-24">
+                <div class="flex items-baseline justify-between mb-10 border-b border-outline-variant/20 pb-4">
+                    <h2 class="noto-serif text-3xl font-light">The Ring Selection</h2>
+                    <span class="manrope text-[10px] uppercase tracking-widest text-secondary">06 Items Found</span>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-16">
+                    <article class="group relative">
+                        <div class="aspect-square bg-surface-container-lowest overflow-hidden mb-6 transition-colors duration-500 group-hover:bg-surface-container-low">
+                            <img alt="Diamond solitaire ring" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuK8B-hClTSWjs8T6fXA1ZcmEb1bj-XzkB-XqL43fSCKGAW1ikZ2yfiE6QwX1OE1IpgECBs1nik5Y76rhL4Cb5qmmOzJhvOrtCmjBnSo_7H2r2gqe6V1E1FOZokn2VjVZHXq1ez13M7x03j7C094UN9By6KbGv9617AXMvXLYtjXpv-c_n_BJ7H5WLkmgIu7dym0vB_pq85REyYf631ZpuEmtBfHvqqR_FZrcfcYsrw34ZVOstEj5GLQfHX6TqmE5xLbrRuq94lv4K"/>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="flex justify-between items-start">
+                                <h3 class="manrope text-sm font-semibold tracking-tight uppercase">Eternal Solitaire</h3>
+                                <span class="manrope text-sm font-light">₹1,85,000</span>
+                            </div>
+                            <div class="flex items-center gap-1 text-primary-container">
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 0;">star</span>
+                            </div>
+                            <button class="w-full py-3 bg-gradient-to-r from-primary to-primary-container text-on-primary manrope text-[10px] uppercase tracking-[0.2rem] opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">Add to Cart</button>
+                        </div>
+                    </article>
+                    <article class="group relative">
+                        <div class="aspect-square bg-surface-container-lowest overflow-hidden mb-6 transition-colors duration-500 group-hover:bg-surface-container-low">
+                            <img alt="Gold band ring" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCSp11liPNlQthUfUgKxlIIeQFOMVeb9T7j2bW1xosa36b_hginmNh3Lis_fQxGtLrw73t9IlNoGNuSzvRo7Dcj3l2yg27VlvaVpIw0F3KubpezWLTyd9VqH52jmkvg6QlGQiZJgymMs_fYXx1c5IM7QDw6DuG4JyJhaCgn9sO4kjf6WR45QpWlXy5veHlistmoukF3Zrkh44H87Z9ds5al2Wzw4hC9vHsrDbzMQ6f0hGTtyrmEqCSC_mYtX3TuXmXS2SvEUUtJbI5"/>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="flex justify-between items-start">
+                                <h3 class="manrope text-sm font-semibold tracking-tight uppercase">Artisan Band</h3>
+                                <span class="manrope text-sm font-light">₹45,000</span>
+                            </div>
+                            <div class="flex items-center gap-1 text-primary-container">
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                            </div>
+                            <button class="w-full py-3 bg-gradient-to-r from-primary to-primary-container text-on-primary manrope text-[10px] uppercase tracking-[0.2rem] opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">Add to Cart</button>
+                        </div>
+                    </article>
+                    <article class="group relative">
+                        <div class="aspect-square bg-surface-container-lowest overflow-hidden mb-6 transition-colors duration-500 group-hover:bg-surface-container-low">
+                            <img alt="Sapphire ring" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSqWk7loYmfjMP75Ck5Eo-wCAzwgqc8zPnov34S7151OTy9FTFjbzOuBNk3V3sUK29Pn2QMsLFKHJ0tIKKY5tt6i0bnub1VwAwa6MSmghFWc2X5cpBv4VQjoD6qSCbEc1OPJWtFy2f6VVgWGaxuOYeGIW5PJ3LO3mhjynCPJ4oXJglca3xARq6cGI9PDLJEep8pJBNKXbzavkO_eb0SdVvh7ipy45GdopugE4anm-7KEU6tV-mYEJ8saXSYx7K9pRsgEnbCdmNd0OR"/>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="flex justify-between items-start">
+                                <h3 class="manrope text-sm font-semibold tracking-tight uppercase">Azure Heirloom</h3>
+                                <span class="manrope text-sm font-light">₹2,10,000</span>
+                            </div>
+                            <div class="flex items-center gap-1 text-primary-container">
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 0.5;">star_half</span>
+                            </div>
+                            <button class="w-full py-3 bg-gradient-to-r from-primary to-primary-container text-on-primary manrope text-[10px] uppercase tracking-[0.2rem] opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">Add to Cart</button>
+                        </div>
+                    </article>
+                    <article class="group relative">
+                        <div class="aspect-square bg-surface-container-lowest overflow-hidden mb-6 transition-colors duration-500 group-hover:bg-surface-container-low">
+                            <img alt="Vintage gold ring" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuClkrwF-I1IXZaneKEjV8oPi4rv7lRTTU73Rq28Aj_1t6BagBzP_GFYAN4bMRvdBwQ3tAdxdWd-lDF-cyXuI8o34bgkS1kHLBttK5zh_ZeihOlI9s0Km3hvCmdp76Tcud7C6F1oaaiy6OOjbPij5tGgjzPvLJKfEweJ4Nf5lqgblZxnMqBep3Ehi7T1FU1GKlaSGf3bFJ9UEONS-sR-2U5rSqgivmLnOZA75uHESTbisKKu-oKJGhg-wnEyIiXRPQUCMl2OmiNFryAo"/>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="flex justify-between items-start">
+                                <h3 class="manrope text-sm font-semibold tracking-tight uppercase">Heritage Bloom</h3>
+                                <span class="manrope text-sm font-light">₹88,000</span>
+                            </div>
+                            <div class="flex items-center gap-1 text-primary-container">
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 0;">star</span>
+                            </div>
+                            <button class="w-full py-3 bg-gradient-to-r from-primary to-primary-container text-on-primary manrope text-[10px] uppercase tracking-[0.2rem] opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">Add to Cart</button>
+                        </div>
+                    </article>
+                    <article class="group relative">
+                        <div class="aspect-square bg-surface-container-lowest overflow-hidden mb-6 transition-colors duration-500 group-hover:bg-surface-container-low">
+                            <img alt="Rose gold ring" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6kFw1-dtddhn_mRxj1AZAyb7kbgJ99ocmAorceS3DcxKFyPnHHMN3suuVmcPqV3Y9fNlXJoyzBP7Czhim6ZE31QWN8COiuU61fmQwc00mTDHMrNDopwekU22s50GgWV2Y2vIn2KOnWpGx9cB6pO1EwL8Ykaouelno3BEOVDqR4jEzpTmtUuoULeg0TvEDAqOjSKRM5q8hlPKPlvfV_4FCZBexnbXC_Jyw2mH1_JN4rhBtZw3Imv5ErQUyzhS0UHrnoKs20HXA8AsZ"/>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="flex justify-between items-start">
+                                <h3 class="manrope text-sm font-semibold tracking-tight uppercase">Dusk Harmony</h3>
+                                <span class="manrope text-sm font-light">₹32,500</span>
+                            </div>
+                            <div class="flex items-center gap-1 text-primary-container">
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                            </div>
+                            <button class="w-full py-3 bg-gradient-to-r from-primary to-primary-container text-on-primary manrope text-[10px] uppercase tracking-[0.2rem] opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">Add to Cart</button>
+                        </div>
+                    </article>
+                    <article class="group relative">
+                        <div class="aspect-square bg-surface-container-lowest overflow-hidden mb-6 transition-colors duration-500 group-hover:bg-surface-container-low">
+                            <img alt="Black diamond ring" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-GI0x24j6OERpkAHctm8J5-VUXrHyXC3mZC3aoYIzNUCWuR6bAMAd7zGbRvlQJdVdxp7QqmnzGxaFzP87DUxdDPaAmI-oUbbfHKsbqZChYpfqRW0iZP3rTPa5rf3q3DzluVRsTBVIFcdrP6dVqrmr6p2hr9hJ13aTK-Y37Av3O0tey_zs6zPPKoXGGQ-dxq28hM9fLFPuLVpzVMsKXg6CR_ZU63VIegZUzAhOrNoc7UiQisqjhkfQl2XAoS6WtyNz66_NhJSTjHLK"/>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="flex justify-between items-start">
+                                <h3 class="manrope text-sm font-semibold tracking-tight uppercase">Midnight Eclipse</h3>
+                                <span class="manrope text-sm font-light">₹1,12,000</span>
+                            </div>
+                            <div class="flex items-center gap-1 text-primary-container">
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 0;">star</span>
+                            </div>
+                            <button class="w-full py-3 bg-gradient-to-r from-primary to-primary-container text-on-primary manrope text-[10px] uppercase tracking-[0.2rem] opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">Add to Cart</button>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Category Section: Necklaces -->
+            <section class="mb-24">
+                <div class="flex items-baseline justify-between mb-10 border-b border-outline-variant/20 pb-4">
+                    <h2 class="noto-serif text-3xl font-light">Necklaces &amp; Pendants</h2>
+                    <span class="manrope text-[10px] uppercase tracking-widest text-secondary">06 Items Found</span>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-16">
+                    <article class="group relative">
+                        <div class="aspect-square bg-surface-container-lowest overflow-hidden mb-6 transition-colors duration-500 group-hover:bg-surface-container-low">
+                            <img alt="Gold necklace" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZ7lrvzQeRPuHqM5EyCHSppZIcZR5qpo6OSaPNsMgsUYBza-69qA3ye4mFemr-qIlkIegnMkCa3pHJ1CT7B-kChkB9dt8zIqV9ZVrutAi8gWq1fdN-17aeptIhvZPl47qWBn4UaptraVgtsB2meu-kCaDqmDbYzXOWkG597LRiYpVTjNFf5W8ZmoYlNaXcRK6HJwaTc9u-uUhPH45CHPcdP_RQm_3bwrHUHgTGbAP40oO7BSIq_8zgTM8xE_nnGPIvMQm0dXLW87WM"/>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="flex justify-between items-start">
+                                <h3 class="manrope text-sm font-semibold tracking-tight uppercase">Pearl Essence</h3>
+                                <span class="manrope text-sm font-light">₹54,000</span>
+                            </div>
+                            <div class="flex items-center gap-1 text-primary-container">
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                            </div>
+                            <button class="w-full py-3 bg-gradient-to-r from-primary to-primary-container text-on-primary manrope text-[10px] uppercase tracking-[0.2rem] opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">Add to Cart</button>
+                        </div>
+                    </article>
+                    <article class="group relative">
+                        <div class="aspect-square bg-surface-container-lowest overflow-hidden mb-6 transition-colors duration-500 group-hover:bg-surface-container-low">
+                            <img alt="Emerald necklace" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgfprFfqJGpSYCGpambweHThZS7hcWqJYSlRO-lMmoh4gSqXcf0_8SNC46YOYVFIaUdemMU7fDyHgMe4kO7X3NoEWfT_NYGJzH9uck_x3uRBWzQu3iLtR5HdUt1YmPMgQoCL61ldliTwvH_zZK4tnERHydu_sqvTeSunQU-6r50r8MSG9hbGctsJIaLiRynB8fBoU-5g5mkljbiG7FlH_oCt4ikZa-gZY9eEWDqmbc0fUYZi21fYYzwmAk2dNL2YTQYO1x9IJAMrk5"/>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="flex justify-between items-start">
+                                <h3 class="manrope text-sm font-semibold tracking-tight uppercase">Verdant Muse</h3>
+                                <span class="manrope text-sm font-light">₹3,45,000</span>
+                            </div>
+                            <div class="flex items-center gap-1 text-primary-container">
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 0;">star</span>
+                            </div>
+                            <button class="w-full py-3 bg-gradient-to-r from-primary to-primary-container text-on-primary manrope text-[10px] uppercase tracking-[0.2rem] opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">Add to Cart</button>
+                        </div>
+                    </article>
+                    <article class="group relative">
+                        <div class="aspect-square bg-surface-container-lowest overflow-hidden mb-6 transition-colors duration-500 group-hover:bg-surface-container-low">
+                            <img alt="Link necklace" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLuQXp-Rtj8L5z25WpV5ef6jLI3EqkacWKtfbLLsXF9keF0XOWajA1ZWjg7aZcAYO4n1E6jv0Jr-6EcjSOJFVibJshgXFCOz-Lli0nDNg6iL5_nUKVAl8ldlj2v5GxLKhaQ7M_sfVBldzvwLuF-zVW6jsr7zDFLgbeu5N3AbbRJnvGzU4w1buudtWZzvp4jW2xIGFLKBM1XfxlrhWP7roiMQnnAiurd_hEmQ6O_vSP06cI5-mK64P9npcOVZaYDVB28j3MaH81ExOP"/>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="flex justify-between items-start">
+                                <h3 class="manrope text-sm font-semibold tracking-tight uppercase">Aurelian Link</h3>
+                                <span class="manrope text-sm font-light">₹1,15,000</span>
+                            </div>
+                            <div class="flex items-center gap-1 text-primary-container">
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                            </div>
+                            <button class="w-full py-3 bg-gradient-to-r from-primary to-primary-container text-on-primary manrope text-[10px] uppercase tracking-[0.2rem] opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">Add to Cart</button>
+                        </div>
+                    </article>
+                    <article class="group relative">
+                        <div class="aspect-square bg-surface-container-lowest overflow-hidden mb-6 transition-colors duration-500 group-hover:bg-surface-container-low">
+                            <img alt="Diamond necklace" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAO_zSlDDTlnR-J2Hcjc76PmTTqzvxxLuioxEPPTvigywLHepDGyaEA2kaQUn01KiFKouDNlUcA7NY58vUE9fKrGaMbMFphDMP0L8DfAkoL5-ZEcLO-iQ188iFl9Lny63R6Yk3U2hggfeh15cn3ycrgUZDzd4QOrZjpIhAf2r2Ik-CNoYYISlOBWaif-PHfTWOlpa19omuq0CzpghtxHLAHxtR07RQqulhivnlzvSRdBhkwjjwgcNlGCReOZ3lAmzOPoIIfwOV0Qhjz"/>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="flex justify-between items-start">
+                                <h3 class="manrope text-sm font-semibold tracking-tight uppercase">Stellar Cascade</h3>
+                                <span class="manrope text-sm font-light">₹4,20,000</span>
+                            </div>
+                            <div class="flex items-center gap-1 text-primary-container">
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                            </div>
+                            <button class="w-full py-3 bg-gradient-to-r from-primary to-primary-container text-on-primary manrope text-[10px] uppercase tracking-[0.2rem] opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">Add to Cart</button>
+                        </div>
+                    </article>
+                    <article class="group relative">
+                        <div class="aspect-square bg-surface-container-lowest overflow-hidden mb-6 transition-colors duration-500 group-hover:bg-surface-container-low">
+                            <img alt="Pendant necklace" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgD6Oq2SOf7e-8WuZCIpOEIxHbrOKFQ3gHA83hJ4VuRtn3muaD_eN43IOdgxC_GcD0IDy3AZFqMS5ZNg3Ms2-zj6NHSbRgM3b1CcJDlmzNdRxCwG8n5l_rZjK1sk6HD7Ft3mwuC_CwsfHKMeW7JLd1kDmx82OQ9ZCVMVc_5CsjoAzewzSeF3HI-juMGTLdA_lRxHJ3vvRrtkOcCQDMPMkmhqwBpFH54uIz3eQY2YGTiwPWDXwYo7zQA-8mW9QB0Mue8V7Rl9S2L6Kl"/>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="flex justify-between items-start">
+                                <h3 class="manrope text-sm font-semibold tracking-tight uppercase">Solstice Glow</h3>
+                                <span class="manrope text-sm font-light">₹38,500</span>
+                            </div>
+                            <div class="flex items-center gap-1 text-primary-container">
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 0.5;">star_half</span>
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 0;">star</span>
+                            </div>
+                            <button class="w-full py-3 bg-gradient-to-r from-primary to-primary-container text-on-primary manrope text-[10px] uppercase tracking-[0.2rem] opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">Add to Cart</button>
+                        </div>
+                    </article>
+                    <article class="group relative">
+                        <div class="aspect-square bg-surface-container-lowest overflow-hidden mb-6 transition-colors duration-500 group-hover:bg-surface-container-low">
+                            <img alt="Layered necklace" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcYYbvqzD7iVCNxf-oi-3WviOfk2SxdJpedrnY0lJz-LsvOgxw5gNUkBEU7GDDa7-SbrhybxfUKOAe611ELEACKF-E0kFGGrWI4cB1rLy7kvo93-94Gvgu--GLJCE9WYzvRP8-LI448m9VyLK1inc2w2z9eyKEvWmfVU5UMZm0fMQDvRbUrZE32YieiAzXRPMdhvqxgCOz0tNM-tf3Ujhut8_zhDYOLu4ouk9t4pFCo8Op97FdjkbugUKBh2xZI4Iv3pOHDE1eK1-U"/>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="flex justify-between items-start">
+                                <h3 class="manrope text-sm font-semibold tracking-tight uppercase">Triad Harmony</h3>
+                                <span class="manrope text-sm font-light">₹72,000</span>
+                            </div>
+                            <div class="flex items-center gap-1 text-primary-container">
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 0.5;">star_half</span>
+                            </div>
+                            <button class="w-full py-3 bg-gradient-to-r from-primary to-primary-container text-on-primary manrope text-[10px] uppercase tracking-[0.2rem] opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">Add to Cart</button>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Category Section: Earrings -->
+            <section class="mb-24">
+                <div class="flex items-baseline justify-between mb-10 border-b border-outline-variant/20 pb-4">
+                    <h2 class="noto-serif text-3xl font-light">Earrings</h2>
+                    <span class="manrope text-[10px] uppercase tracking-widest text-secondary">05 Items Found</span>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-16">
+                    <article class="group relative">
+                        <div class="aspect-square bg-surface-container-lowest overflow-hidden mb-6 transition-colors duration-500 group-hover:bg-surface-container-low">
+                            <img alt="Gold hoops" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdO6Ul2L3zMFT0cmtspjZZZjGT_04OZw2vitUt-VT-l7SAFEyymsxjP9NlhSn8DUz8XxUYW6Opq2_4ZfE8rK49geC4h734eP8esqQI8sV9lIprm6eA3eXUhiDU7rLcajQDKsKq3zuLqkux2NyLqAxCg35kKwj1E1HtcsiItKQO_UijhTOh4DzVQTJ6XIGxCOzsXq2ODlcwxkIkHy1rxWAbRTFk94iyeTWsMdo6aYO8RJKgoxs7rrxyETez-S6uETXKxR88b0KR2Wr1"/>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="flex justify-between items-start">
+                                <h3 class="manrope text-sm font-semibold tracking-tight uppercase">Infinite Arc</h3>
+                                <span class="manrope text-sm font-light">₹28,500</span>
+                            </div>
+                            <div class="flex items-center gap-1 text-primary-container">
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                            </div>
+                            <button class="w-full py-3 bg-gradient-to-r from-primary to-primary-container text-on-primary manrope text-[10px] uppercase tracking-[0.2rem] opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">Add to Cart</button>
+                        </div>
+                    </article>
+                    <article class="group relative">
+                        <div class="aspect-square bg-surface-container-lowest overflow-hidden mb-6 transition-colors duration-500 group-hover:bg-surface-container-low">
+                            <img alt="Diamond studs" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKB3Yew0zFjZC7MS20NmpQO3mYcZI_yyPwN-I7sZhgY-6OpdxTJ2Dh7U7HzixW0xxNbC-uTNpSkT9cGScEFG1JDrmxDZzbvGM8mBwCf8P48tB4bI-8tGd1lq9OW9bZbO7zTzj0zGSzWycuodRBy_0lvog565qXjweOryJxNZdIYTMei5GWYQv0EtGJ4gaeM9F2pSGYxWLVdKNzOfyFCH4QE8tWB3VpVcffg5nn_T141Y8lPWWyw8E9JlMc2Ojmz6ggaLshEO0huE25"/>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="flex justify-between items-start">
+                                <h3 class="manrope text-sm font-semibold tracking-tight uppercase">Pure Radiance</h3>
+                                <span class="manrope text-sm font-light">₹95,000</span>
+                            </div>
+                            <div class="flex items-center gap-1 text-primary-container">
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                            </div>
+                            <button class="w-full py-3 bg-gradient-to-r from-primary to-primary-container text-on-primary manrope text-[10px] uppercase tracking-[0.2rem] opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">Add to Cart</button>
+                        </div>
+                    </article>
+                    <article class="group relative">
+                        <div class="aspect-square bg-surface-container-lowest overflow-hidden mb-6 transition-colors duration-500 group-hover:bg-surface-container-low">
+                            <img alt="Celestial Studs" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCq-Ss32s69-KbevKygFUGHPBWLWrvnSqSrEIDueCFq3io28IL79su8AcQ5rXiHjVD8AAc8Z0QnOHJTvqslZf8EKdeJkM0-31OKxgQpXUR9kl5M7iIjpfBiPwsOykJlQjKVZMfOBOOd8eK41W_-0EVfZZB-4aH96bNZGzNHahnv4eIy-nPrYxr7ZyWJ6CnYdUBT1iTn1DiDR9tKlxRlRihKV6gMJlghMxvT1D-ynGJUaDaBHci0dxmU46AQGrgA6kDm_inBjM9M9076"/>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="flex justify-between items-start">
+                                <h3 class="manrope text-sm font-semibold tracking-tight uppercase">Celestial Studs</h3>
+                                <span class="manrope text-sm font-light">₹18,000</span>
+                            </div>
+                            <div class="flex items-center gap-1 text-primary-container">
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 0;">star</span>
+                            </div>
+                            <button class="w-full py-3 bg-gradient-to-r from-primary to-primary-container text-on-primary manrope text-[10px] uppercase tracking-[0.2rem] opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">Add to Cart</button>
+                        </div>
+                    </article>
+                    <article class="group relative">
+                        <div class="aspect-square bg-surface-container-lowest overflow-hidden mb-6 transition-colors duration-500 group-hover:bg-surface-container-low">
+                            <img alt="Royal Emerald Droplets" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDr-hIri1Bjim3AJtyNZIvHa0Ki4NpOTGhUd-iEwuZHGNUcxrnLOubr2_cs8C54v8QtmGODgUjbwNhSLLfghM_Swbt-XNhVc-EW_WUaVJGdnfZSLe6m3hVFQuXHjywPI_JAbWYNrC05ELnT2p7HMjAiCINnTHHKQmWolk0QrJ_ivC4naHZTF39d4srQpW3llpO0Xb-aN-g3Owtp361bnxysfTPzQ9MIlgVIcFTCQfOAi8dPUgQ2CV7Mf1ICq26Yi_sBUBO4uBqw2eNp"/>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="flex justify-between items-start">
+                                <h3 class="manrope text-sm font-semibold tracking-tight uppercase">Royal Emerald Droplets</h3>
+                                <span class="manrope text-sm font-light">₹1,45,000</span>
+                            </div>
+                            <div class="flex items-center gap-1 text-primary-container">
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                            </div>
+                            <button class="w-full py-3 bg-gradient-to-r from-primary to-primary-container text-on-primary manrope text-[10px] uppercase tracking-[0.2rem] opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">Add to Cart</button>
+                        </div>
+                    </article>
+                    <article class="group relative">
+                        <div class="aspect-square bg-surface-container-lowest overflow-hidden mb-6 transition-colors duration-500 group-hover:bg-surface-container-low">
+                            <img alt="Golden Leaf Hoops" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCSp11liPNlQthUfUgKxlIIeQFOMVeb9T7j2bW1xosa36b_hginmNh3Lis_fQxGtLrw73t9IlNoGNuSzvRo7Dcj3l2yg27VlvaVpIw0F3KubpezWLTyd9VqH52jmkvg6QlGQiZJgymMs_fYXx1c5IM7QDw6DuG4JyJhaCgn9sO4kjf6WR45QpWlXy5veHlistmoukF3Zrkh44H87Z9ds5al2Wzw4hC9vHsrDbzMQ6f0hGTtyrmEqCSC_mYtX3TuXmXS2SvEUUtJbI5"/>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="flex justify-between items-start">
+                                <h3 class="manrope text-sm font-semibold tracking-tight uppercase">Golden Leaf Hoops</h3>
+                                <span class="manrope text-sm font-light">₹32,000</span>
+                            </div>
+                            <div class="flex items-center gap-1 text-primary-container">
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 0.5;">star_half</span>
+                            </div>
+                            <button class="w-full py-3 bg-gradient-to-r from-primary to-primary-container text-on-primary manrope text-[10px] uppercase tracking-[0.2rem] opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">Add to Cart</button>
+                        </div>
+                    </article>
+                    <article class="group relative">
+                        <div class="aspect-square bg-surface-container-lowest overflow-hidden mb-6 transition-colors duration-500 group-hover:bg-surface-container-low">
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+        </div>
+    </div>
+</main>
+
+</body>
+</html>
