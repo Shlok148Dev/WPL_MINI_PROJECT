@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Catalogue | JANKA ATELIER</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@300;400;600&family=Manrope:wght@200;300;400;600&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <link href="CSTYLE.css" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-tint": "#735c00",
+                        "inverse-primary": "#e9c349",
+                        "on-error-container": "#93000a",
+                        "surface-container-highest": "#e5e2e1",
+                        "secondary-container": "#e2dfde",
+                        "primary-container": "#d4af37",
+                        "primary": "#735c00",
+                        "surface-variant": "#e5e2e1",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "primary-fixed": "#ffe088",
+                        "surface-container-high": "#eae7e7",
+                        "surface": "#fcf9f8",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed-dim": "#e3c37b",
+                        "primary-fixed-dim": "#e9c349",
+                        "error-container": "#ffdad6",
+                        "on-background": "#1c1b1b",
+                        "on-surface-variant": "#4d4635",
+                        "on-error": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#5f5e5e",
+                        "surface-dim": "#dcd9d9",
+                        "tertiary-fixed": "#ffdf9a",
+                        "on-surface": "#1c1b1b",
+                        "on-primary": "#ffffff",
+                        "outline": "#7f7663",
+                        "on-secondary": "#ffffff",
+                        "surface-container": "#f0eded",
+                        "on-primary-fixed": "#241a00",
+                        "inverse-on-surface": "#f3f0ef",
+                        "on-secondary-container": "#636262",
+                        "on-tertiary-fixed": "#251a00",
+                        "on-primary-fixed-variant": "#574500",
+                        "on-tertiary": "#ffffff",
+                        "tertiary": "#735b1e",
+                        "surface-bright": "#fcf9f8",
+                        "background": "#fcf9f8",
+                        "on-tertiary-fixed-variant": "#594405",
+                        "on-primary-container": "#554300",
+                        "on-secondary-fixed-variant": "#474746",
+                        "inverse-surface": "#313030",
+                        "secondary-fixed": "#e5e2e1",
+                        "outline-variant": "#d0c5af",
+                        "surface-container-low": "#f6f3f2",
+                        "on-tertiary-container": "#574204",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "tertiary-container": "#ceaf69"
+                    },
+                    fontFamily: {
+                        "headline": ["Noto Serif"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    },
+                    borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface manrope selection:bg-primary-container selection:text-on-primary-container">
+
+<!-- TopNavBar -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-[#fcf9f8]/80 dark:bg-[#1c1b1b]/80 backdrop-blur-md">
+    <div class="flex justify-between items-center w-full px-8 py-6 max-w-[1920px] mx-auto">
+        <div class="flex items-center gap-12">
+            <a class="text-3xl font-serif italic text-[#1c1b1b] dark:text-[#fcf9f8] tracking-tight" href="index.html">Janka</a>
+            <div class="hidden lg:flex gap-8">
+                <a class="text-[#1c1b1b] dark:text-[#fcf9f8] opacity-80 hover:opacity-100 hover:text-[#735c00] transition-all duration-300 font-label text-xs uppercase tracking-widest" href="index.html">Home</a>
+                <a class="text-[#735c00] dark:text-[#d4af37] border-b border-[#735c00] pb-1 font-label text-xs uppercase tracking-widest" href="catalogue.html">Catalogue</a>
+                <a class="text-[#1c1b1b] dark:text-[#fcf9f8] opacity-80 hover:opacity-100 hover:text-[#735c00] transition-all duration-300 font-label text-xs uppercase tracking-widest" href="search.html">Search</a>
+                <a class="text-[#1c1b1b] dark:text-[#fcf9f8] opacity-80 hover:opacity-100 hover:text-[#735c00] transition-all duration-300 font-label text-xs uppercase tracking-widest" href="feedback.html">Feedback</a>
+                <a class="text-[#1c1b1b] dark:text-[#fcf9f8] opacity-80 hover:opacity-100 hover:text-[#735c00] transition-all duration-300 font-label text-xs uppercase tracking-widest" href="contact.html">Contact</a>
+            </div>
+        </div>
+        <div class="flex items-center gap-6">
+            <div class="flex items-center gap-4">
+                <a class="hidden xl:block text-[#1c1b1b] dark:text-[#fcf9f8] opacity-80 hover:opacity-100 hover:text-[#735c00] transition-all duration-300 font-label text-xs uppercase tracking-widest" href="register.html">Register</a>
+                <button id="theme-toggle" class="hover:text-primary transition-colors active:scale-95 duration-200">
+                    <span class="material-symbols-outlined" id="theme-icon">dark_mode</span>
+                </button>
+                <div class="relative">
+                    <a href="cart.html" class="hover:text-primary transition-colors active:scale-95 duration-200 block">
+                        <span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+                    </a>
+                    <span id="cart-counter" class="absolute -top-1 -right-2 bg-primary text-white text-[9px] font-bold px-[5px] py-[2px] rounded-full">0</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<main class="pt-32 pb-24">
+    <!-- Hero Header -->
+    <header class="px-12 mb-16 max-w-[1920px] mx-auto">
+        <h1 class="noto-serif text-6xl font-light tracking-tight text-on-surface mb-4">The Catalogue</h1>
+        <p class="manrope text-secondary max-w-xl font-light leading-relaxed">A curated collection of bespoke craftsmanship, where heritage meets modern elegance. Each piece is a testament to the artisan's soul.</p>
+    </header>
+
+    <!-- Main Layout -->
+    <div class="px-12 max-w-[1920px] mx-auto flex flex-col lg:flex-row gap-16">
+
+        <!-- Filter Sidebar -->
+        <aside class="w-full lg:w-64 flex-shrink-0 space-y-12">
+            <div>
+                <h3 class="manrope text-[10px] uppercase tracking-[0.2rem] text-primary font-bold mb-6">Category</h3>
+                <div class="space-y-3">
+                    <label class="flex items-center gap-3 cursor-pointer group">
+                        <input checked="" class="w-4 h-4 border-outline-variant text-primary focus:ring-primary rounded-none" type="checkbox"/>
+                        <span class="manrope text-sm font-light group-hover:text-primary transition-colors">Rings</span>
+                    </label>
+                    <label class="flex items-center gap-3 cursor-pointer group">
+                        <input checked="" class="w-4 h-4 border-outline-variant text-primary focus:ring-primary rounded-none" type="checkbox"/>
+                        <span class="manrope text-sm font-light group-hover:text-primary transition-colors">Necklaces</span>
+                    </label>
+                    <label class="flex items-center gap-3 cursor-pointer group">
+                        <input checked="" class="w-4 h-4 border-outline-variant text-primary focus:ring-primary rounded-none" type="checkbox"/>
+                        <span class="manrope text-sm font-light group-hover:text-primary transition-colors">Earrings</span>
+                    </label>
+                    <label class="flex items-center gap-3 cursor-pointer group">
+                        <input checked="" class="w-4 h-4 border-outline-variant text-primary focus:ring-primary rounded-none" type="checkbox"/>
+                        <span class="manrope text-sm font-light group-hover:text-primary transition-colors">Bracelets</span>
+                    </label>
+                </div>
+            </div>
+            <div>
+                <h3 class="manrope text-[10px] uppercase tracking-[0.2rem] text-primary font-bold mb-6">Material</h3>
+                <div class="space-y-3">
+                    <label class="flex items-center gap-3 cursor-pointer group">
+                        <input class="w-4 h-4 border-outline-variant text-primary focus:ring-primary" name="material" type="radio"/>
+                        <span class="manrope text-sm font-light group-hover:text-primary transition-colors">18K Yellow Gold</span>
+                    </label>
+                    <label class="flex items-center gap-3 cursor-pointer group">
+                        <input class="w-4 h-4 border-outline-variant text-primary focus:ring-primary" name="material" type="radio"/>
+                        <span class="manrope text-sm font-light group-hover:text-primary transition-colors">Rose Gold</span>
+                    </label>
+                    <label class="flex items-center gap-3 cursor-pointer group">
+                        <input class="w-4 h-4 border-outline-variant text-primary focus:ring-primary" name="material" type="radio"/>
+                        <span class="manrope text-sm font-light group-hover:text-primary transition-colors">Platinum</span>
+                    </label>
+                </div>
+            </div>
+            <div>
+                <h3 class="manrope text-[10px] uppercase tracking-[0.2rem] text-primary font-bold mb-6">Price Range</h3>
+                <input class="w-full h-1 bg-surface-container-high rounded-none appearance-none cursor-pointer accent-primary" type="range"/>
+                <div class="flex justify-between mt-2 manrope text-[10px] text-secondary tracking-widest">
+                    <span>₹25,000</span>
+                    <span>₹5,00,000+</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Product Display Area -->
+        <div class="flex-grow">
+
+            <!-- Category Section: Rings -->
+            <section class="mb-24">
+                <div class="flex items-baseline justify-between mb-10 border-b border-outline-variant/20 pb-4">
+                    <h2 class="noto-serif text-3xl font-light">The Ring Selection</h2>
+                    <span class="manrope text-[10px] uppercase tracking-widest text-secondary">06 Items Found</span>
+                </div>
+                <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-16">
+                    <!-- Products will be dynamically populated here via products.js & main.js -->
+                </div>
+            </section>
+
+        </div>
+    </div>
+</main>
+
+    <script src="js/products.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
