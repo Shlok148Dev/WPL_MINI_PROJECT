@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search | Janka Creation</title>
+    <!-- Tailwind CSS for styling, matching the design system -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Noto Serif for headlines, Manrope for body/labels -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Manrope:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Manrope', sans-serif; background-color: #fcf9f8; color: #5f5e5e; }
+        h1, h2, h3, .serif { font-family: 'Noto Serif', serif; }
+        .accent-color { color: #775a19; }
+        .bg-accent { background-color: #775a19; }
+        .border-accent { border-color: #775a19; }
+        
+        /* Glassmorphism for Nav */
+        .nav-blur { backdrop-filter: blur(20px); background-color: rgba(252, 249, 248, 0.8); }
+        
+        /* Transitions */
+        .fade-in { transition: opacity 0.3s ease-in-out; }
+        .product-card:hover .product-image { transform: scale(1.05); }
+        .product-image { transition: transform 0.5s ease; }
+    </style>
+</head>
+<body class="pt-24">
+
+    <!-- TOP NAVIGATION -->
+    <nav class="fixed top-0 w-full z-50 nav-blur px-12 py-6 flex justify-between items-center">
+        <div class="text-2xl font-light tracking-widest accent-color serif">JANKA CREATION</div>
+        <div class="flex gap-8 text-xs uppercase tracking-[0.05em]">
+            <a href="#" class="hover:text-[#c5a059] transition-colors">Collections</a>
+            <a href="#" class="hover:text-[#c5a059] transition-colors">Fine Jewelry</a>
+            <a href="#" class="hover:text-[#c5a059] transition-colors">Bespoke</a>
+            <a href="#" class="hover:text-[#c5a059] transition-colors">About</a>
+        </div>
+        <div class="flex gap-6 items-center">
+            <button id="search-trigger"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg></button>
+            <button><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg></button>
+        </div>
+    </nav>
+
+    <div class="flex px-12 gap-12">
+        <!-- SIDEBAR FILTERS -->
+        <aside class="w-80 flex-shrink-0 py-10">
+            <div class="mb-12">
+                <h3 class="serif text-xl accent-color mb-1">FILTER BY CATEGORY</h3>
+                <p class="text-xs uppercase tracking-widest opacity-60 mb-6">Refine your selection</p>
+                <ul id="category-list" class="space-y-4">
+                    <li><button data-category="all" class="filter-btn active text-sm accent-color font-semibold">ALL COLLECTIONS</button></li>
+                    <li><button data-category="necklaces" class="filter-btn text-sm hover:translate-x-1 transition-transform">NECKLACES</button></li>
+                    <li><button data-category="rings" class="filter-btn text-sm hover:translate-x-1 transition-transform">RINGS</button></li>
+                    <li><button data-category="earrings" class="filter-btn text-sm hover:translate-x-1 transition-transform">EARRINGS</button></li>
+                    <li><button data-category="bracelets" class="filter-btn text-sm hover:translate-x-1 transition-transform">BRACELETS</button></li>
+                </ul>
+            </div>
+
+            <div class="mb-12">
+                <h3 class="serif text-sm accent-color mb-4">SORT BY</h3>
+                <select id="sort-select" class="w-full bg-transparent border-b border-stone-300 py-2 text-sm focus:outline-none focus:border-accent">
+                    <option value="relevance">Relevance</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                </select>
+            </div>
+
+            <button id="apply-filters" class="w-full bg-accent text-white py-4 text-xs uppercase tracking-[0.2em] hover:opacity-90 transition-opacity">
+                Apply Filters
+            </button>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="flex-grow py-10">
+            <!-- SEARCH BAR -->
+            <div class="relative mb-8">
+                <input type="text" id="main-search-input" placeholder="Search our collections..." 
+                       class="w-full serif text-4xl border-b border-stone-300 bg-transparent py-4 focus:outline-none focus:border-accent italic">
+                <svg class="absolute right-0 top-1/2 -translate-y-1/2 w-8 h-8 opacity-40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+            </div>
+
+            <div id="results-meta" class="mb-12">
+                <p class="text-[10px] uppercase tracking-[0.3em] opacity-60">Showing <span id="result-count">0</span> matching pieces found in our collection</p>
+            </div>
+
+            <!-- PRODUCT GRID -->
+            <div id="product-grid" class="grid grid-cols-3 gap-x-8 gap-y-16">
+                <!-- Products will be injected here via JS -->
+            </div>
+
+            <!-- LOAD MORE -->
+            <div class="mt-24 text-center">
+                <button class="border border-stone-300 px-12 py-4 text-[10px] uppercase tracking-[0.3em] hover:bg-stone-100 transition-colors">
+                    Load More Treasures
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#5f5e5e] text-[#fcf9f8] py-20 px-12 mt-32 text-center">
+        <div class="text-xl font-light tracking-[0.2em] mb-12 serif uppercase">JANKA CREATION</div>
+        <div class="flex justify-center gap-12 text-[10px] uppercase tracking-widest mb-16">
+            <a href="#" class="hover:text-[#c5a059]">The Atelier</a>
+            <a href="#" class="hover:text-[#c5a059]">Care Guide</a>
+            <a href="#" class="hover:text-[#c5a059]">Shipping & Returns</a>
+            <a href="#" class="hover:text-[#c5a059]">Contact Us</a>
+        </div>
+        <p class="text-[9px] opacity-40 tracking-widest">© 2024 JANKA CREATION. ALL RIGHTS RESERVED.</p>
+    </footer>
+
+    <!-- LOGIC SCRIPT (search.js) -->
+    <script>
+        // MOCK DATA
+        const products = [
+            { id: 1, name: "Ethereal Solitaire Ring", category: "rings", price: 18400, details: "2.5 CARAT RADIANT CUT • 18K WHITE GOLD", image: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&q=80&w=600", tag: "NEW ARRIVAL" },
+            { id: 2, name: "Stellar Halo Necklace", category: "necklaces", price: 12950, details: "D-COLOR DIAMONDS • PLATINUM SETTING", image: "https://images.unsplash.com/photo-1599643478123-51145a50bc46?auto=format&fit=crop&q=80&w=600" },
+            { id: 3, name: "Celestial Studs", category: "earrings", price: 9200, details: "PAIR 3.0 CTW • VVS1 CLARITY", image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&q=80&w=600" },
+            { id: 4, name: "Cascade Tennis Bracelet", category: "bracelets", price: 24000, details: "ROUND BRILLIANT CUT • 14K YELLOW GOLD", image: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&q=80&w=600" },
+            { id: 5, name: "Lumière Pave Band", category: "rings", price: 6700, details: "BESPOKE SETTING • MICRO-PAVE DETAIL", image: "https://images.unsplash.com/photo-1603561591411-0e7320b97769?auto=format&fit=crop&q=80&w=600" },
+            { id: 6, name: "Gilded Drop Earrings", category: "earrings", price: 15200, details: "PEAR CUT DIAMONDS • 18K ROSE GOLD", image: "https://images.unsplash.com/photo-1635767798638-3e25273a8236?auto=format&fit=crop&q=80&w=600" },
+        ];
+
+        let activeCategory = 'all';
+        let searchQuery = '';
+
+        // DOM ELEMENTS
+        const grid = document.getElementById('product-grid');
+        const searchInput = document.getElementById('main-search-input');
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const resultCountText = document.getElementById('result-count');
+        const sortSelect = document.getElementById('sort-select');
+
+        // RENDER FUNCTION
+        function renderProducts() {
+            // Filter logic
+            let filtered = products.filter(p => {
+                const matchesCategory = activeCategory === 'all' || p.category === activeCategory;
+                const matchesSearch = p.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
+                                     p.details.toLowerCase().includes(searchQuery.toLowerCase());
+                return matchesCategory && matchesSearch;
+            });
+
+            // Sort logic
+            const sortVal = sortSelect.value;
+            if (sortVal === 'price-low') filtered.sort((a, b) => a.price - b.price);
+            if (sortVal === 'price-high') filtered.sort((a, b) => b.price - a.price);
+
+            // Clear and Render
+            grid.innerHTML = '';
+            resultCountText.innerText = filtered.length;
+
+            filtered.forEach(p => {
+                const card = `
+                    <div class="product-card group cursor-pointer fade-in">
+                        <div class="relative aspect-[4/5] overflow-hidden mb-6 bg-stone-100">
+                            ${p.tag ? `<span class="absolute top-4 left-4 z-10 bg-white px-3 py-1 text-[9px] tracking-widest font-semibold">${p.tag}</span>` : ''}
+                            <img src="${p.image}" alt="${p.name}" class="product-image w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0">
+                        </div>
+                        <h4 class="serif text-lg mb-1">${p.name}</h4>
+                        <p class="text-[10px] uppercase tracking-widest opacity-60 mb-3">${p.details}</p>
+                        <p class="accent-color font-semibold text-sm">$${p.price.toLocaleString()}</p>
+                    </div>
+                `;
+                grid.innerHTML += card;
+            });
+
+            if (filtered.length === 0) {
+                grid.innerHTML = '<div class="col-span-3 py-20 text-center opacity-40 serif italic text-xl">No treasures found matching your request.</div>';
+            }
+        }
+
+        // EVENT LISTENERS
+        searchInput.addEventListener('input', (e) => {
+            searchQuery = e.target.value;
+            renderProducts();
+        });
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update UI
+                filterBtns.forEach(b => b.classList.remove('accent-color', 'font-semibold'));
+                btn.classList.add('accent-color', 'font-semibold');
+                
+                // Update State
+                activeCategory = btn.dataset.category;
+                renderProducts();
+            });
+        });
+
+        sortSelect.addEventListener('change', renderProducts);
+
+        // INITIAL RENDER
+        renderProducts();
+
+    </script>
+</body>
+</html>

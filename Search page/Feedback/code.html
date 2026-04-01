@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@300;400;700&amp;family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-variant": "#e5e2e1",
+              "on-secondary-fixed": "#1b1c1c",
+              "inverse-primary": "#e9c176",
+              "tertiary-container": "#a7a5a0",
+              "error": "#ba1a1a",
+              "surface": "#fcf9f8",
+              "surface-container-high": "#eae7e7",
+              "error-container": "#ffdad6",
+              "background": "#fcf9f8",
+              "tertiary-fixed": "#e5e2dc",
+              "on-tertiary-fixed": "#1c1c18",
+              "surface-container-low": "#f6f3f2",
+              "secondary-fixed": "#e4e2e1",
+              "on-background": "#1c1b1b",
+              "on-secondary-fixed-variant": "#474747",
+              "surface-dim": "#dcd9d9",
+              "on-primary-fixed": "#261900",
+              "on-secondary": "#ffffff",
+              "secondary": "#5f5e5e",
+              "on-tertiary-container": "#3b3b37",
+              "secondary-fixed-dim": "#c8c6c5",
+              "on-error-container": "#93000a",
+              "primary-fixed": "#ffdea5",
+              "surface-container-highest": "#e5e2e1",
+              "outline": "#7f7667",
+              "inverse-surface": "#313030",
+              "surface-container": "#f0eded",
+              "outline-variant": "#d1c5b4",
+              "on-tertiary-fixed-variant": "#474743",
+              "on-error": "#ffffff",
+              "primary": "#775a19",
+              "on-secondary-container": "#656464",
+              "primary-fixed-dim": "#e9c176",
+              "primary-container": "#c5a059",
+              "on-primary-fixed-variant": "#5d4201",
+              "surface-bright": "#fcf9f8",
+              "tertiary": "#5f5e5a",
+              "tertiary-fixed-dim": "#c9c6c1",
+              "surface-container-lowest": "#ffffff",
+              "inverse-on-surface": "#f3f0ef",
+              "on-primary": "#ffffff",
+              "on-surface-variant": "#4e4639",
+              "on-tertiary": "#ffffff",
+              "on-primary-container": "#4e3700",
+              "on-surface": "#1c1b1b",
+              "secondary-container": "#e4e2e1",
+              "surface-tint": "#775a19"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+        }
+        .diamond-filled {
+            font-variation-settings: 'FILL' 1, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 border-0 bg-[#fcf9f8]/80 dark:bg-stone-900/80 backdrop-blur-xl flex justify-between items-center px-12 py-6">
+<div class="text-2xl font-light tracking-[0.2em] uppercase text-[#775a19] dark:text-[#c5a059] font-['Noto_Serif']">
+            Janka Creation
+        </div>
+<div class="hidden md:flex items-center gap-12 font-['Noto_Serif'] tracking-tight">
+<a class="text-[#5f5e5e] dark:text-stone-400 hover:text-[#775a19] transition-colors" href="#">Collections</a>
+<a class="text-[#5f5e5e] dark:text-stone-400 hover:text-[#775a19] transition-colors" href="#">Bespoke</a>
+<a class="text-[#5f5e5e] dark:text-stone-400 hover:text-[#775a19] transition-colors" href="#">The Atelier</a>
+<a class="text-[#5f5e5e] dark:text-stone-400 hover:text-[#775a19] transition-colors" href="#">Heritage</a>
+</div>
+<div class="flex items-center gap-6 text-[#775a19] dark:text-[#c5a059]">
+<button class="hover:scale-95 duration-200 ease-in-out transition-all">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+</button>
+<button class="hover:scale-95 duration-200 ease-in-out transition-all">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</button>
+</div>
+</nav>
+<main class="pt-32 pb-24 px-6 md:px-12 lg:px-24 flex flex-col items-center">
+<!-- Hero Section Asymmetry -->
+<section class="max-w-4xl w-full grid grid-cols-1 md:grid-cols-12 gap-12 items-center mb-16">
+<div class="md:col-span-7">
+<h1 class="font-headline text-5xl md:text-6xl text-on-surface tracking-tight mb-6">
+                    Share Your Experience
+                </h1>
+<p class="font-body text-secondary text-lg max-w-md leading-relaxed">
+                    Your insight helps us refine our craftsmanship and elevate the Atelier experience.
+                </p>
+</div>
+<div class="md:col-span-5 relative aspect-[4/5] bg-surface-container-low overflow-hidden">
+<img alt="Artisan at work" class="w-full h-full object-cover grayscale opacity-80 mix-blend-multiply" data-alt="close-up of a master jeweler working on a gold setting with professional lighting and blurred atelier background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3e39a3_zcJ-0yVVOj_mTEYyaH682YpIjSK335bzpx9uGKsrj6RpYJR1xV2Yae1TFUsUeKEvddH7yw84Qzl5NttdWgV8Tdl2tIfQbeFV29PB_8vLVrXW0b4pZZj9D_tHuQxkfQZ34cjp0HDEgzORADXZmLt5cl70U6LsSUax17SVcdnbPdMlHyCzhPiJtEeV9bhTw_yOQ_iMA2JO3_o5_zNtjJxS9zrCjUb4J0-xZV8GgRiXazE1LiP0lmJhjI8N3VecAXHSQhmjY"/>
+<div class="absolute inset-0 bg-primary/5"></div>
+</div>
+</section>
+<!-- Feedback Form Container -->
+<div class="max-w-3xl w-full space-y-24">
+<!-- Rating Section -->
+<div class="flex flex-col items-center text-center space-y-8">
+<span class="font-label text-xs tracking-[0.2em] uppercase text-primary">Service Excellence</span>
+<div class="flex flex-col md:flex-row items-center gap-4 md:gap-12">
+<div id="rating-stars" class="flex gap-4">
+  <span class="star material-symbols-outlined text-3xl cursor-pointer text-outline-variant" data-rating="1">diamond</span>
+  <span class="star material-symbols-outlined text-3xl cursor-pointer text-outline-variant" data-rating="2">diamond</span>
+  <span class="star material-symbols-outlined text-3xl cursor-pointer text-outline-variant" data-rating="3">diamond</span>
+  <span class="star material-symbols-outlined text-3xl cursor-pointer text-outline-variant" data-rating="4">diamond</span>
+  <span class="star material-symbols-outlined text-3xl cursor-pointer text-outline-variant" data-rating="5">diamond</span>
+</div>
+
+<input type="hidden" id="rating" value="0">
+
+</div>
+</div>
+<!-- Detailed Feedback Form -->
+<form id="feedback-form" class="space-y-16">
+<!-- Collection Select -->
+<div class="space-y-6">
+<label class="font-label text-xs tracking-[0.2em] uppercase text-primary block">Which collection did you explore?</label>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<label class="group relative flex items-center justify-center p-8 bg-surface-container-low border-b border-transparent hover:border-primary transition-all cursor-pointer">
+<input class="sr-only peer" name="collection" type="radio"/>
+<span class="font-headline text-lg text-secondary peer-checked:text-primary transition-colors">Heritage</span>
+<div class="absolute bottom-0 left-0 w-full h-0.5 bg-primary scale-x-0 peer-checked:scale-x-100 transition-transform origin-left"></div>
+</label>
+<label class="group relative flex items-center justify-center p-8 bg-surface-container-low border-b border-transparent hover:border-primary transition-all cursor-pointer">
+<input class="sr-only peer" name="collection" type="radio"/>
+<span class="font-headline text-lg text-secondary peer-checked:text-primary transition-colors">Bespoke</span>
+<div class="absolute bottom-0 left-0 w-full h-0.5 bg-primary scale-x-0 peer-checked:scale-x-100 transition-transform origin-left"></div>
+</label>
+<label class="group relative flex items-center justify-center p-8 bg-surface-container-low border-b border-transparent hover:border-primary transition-all cursor-pointer">
+<input class="sr-only peer" name="collection" type="radio"/>
+<span class="font-headline text-lg text-secondary peer-checked:text-primary transition-colors">The Atelier</span>
+<div class="absolute bottom-0 left-0 w-full h-0.5 bg-primary scale-x-0 peer-checked:scale-x-100 transition-transform origin-left"></div>
+</label>
+</div>
+</div>
+<!-- Narrative -->
+<div class="space-y-6">
+<label class="font-label text-xs tracking-[0.2em] uppercase text-primary block" for="feedback">The Narrative</label>
+<textarea id="feedback-text" class="w-full bg-transparent border-0 border-b border-outline/30 focus:border-primary focus:ring-0 px-0 py-4 font-body text-on-surface placeholder:text-outline/50 resize-none transition-all" placeholder="Tell us about your journey with Janka Creation..." rows="6"></textarea></div>
+<!-- Submit Action -->
+<div class="flex flex-col items-center pt-8">
+<button class="group relative overflow-hidden bg-primary text-on-primary px-16 py-5 font-label text-xs tracking-[0.3em] uppercase transition-all hover:bg-primary-container hover:text-on-primary-container" type="submit">
+<span class="relative z-10">SUBMIT FEEDBACK</span>
+</button>
+<p class="mt-8 font-label text-[10px] text-outline/60 uppercase tracking-widest italic">
+                        By submitting, you consent to our privacy terms for archival purposes.
+                    </p>
+</div>
+</form>
+<p id="feedback-message" class="text-center mt-6"></p>
+</div>
+<!-- Decorative Pedestal Image (Asymmetric Footer Decorative Element) -->
+<div class="w-full max-w-6xl mt-32 grid grid-cols-12">
+<div class="col-start-8 col-span-5 bg-surface-container-high h-[1px] self-center"></div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 border-0 bg-[#f6f3f2] dark:bg-stone-950 flex flex-col items-center gap-6 px-8">
+<div class="text-lg font-bold text-[#5f5e5e] font-['Manrope']">
+            JANKA CREATION
+        </div>
+<div class="flex flex-wrap justify-center gap-8 font-['Manrope'] text-xs tracking-[0.05em] uppercase">
+<a class="text-[#5f5e5e] dark:text-stone-500 hover:text-[#775a19] transition-colors opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="text-[#5f5e5e] dark:text-stone-500 hover:text-[#775a19] transition-colors opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+<a class="text-[#5f5e5e] dark:text-stone-500 hover:text-[#775a19] transition-colors opacity-80 hover:opacity-100" href="#">Care Guide</a>
+<a class="text-[#5f5e5e] dark:text-stone-500 hover:text-[#775a19] transition-colors opacity-80 hover:opacity-100" href="#">Contact Us</a>
+</div>
+<div class="text-[#5f5e5e] dark:text-stone-500 font-['Manrope'] text-[10px] tracking-[0.1em] uppercase">
+            © 2024 Janka Creation. All rights reserved.
+        </div>
+</footer>
+<script src="../form-validation.js"></script>
+</body></html>
