@@ -76,6 +76,7 @@
 <body class="bg-surface text-on-surface manrope selection:bg-primary-container selection:text-on-primary-container">
 
 <!-- TopNavBar -->
+<<<<<<< HEAD
 <nav class="fixed top-0 left-0 right-0 z-50 bg-[#fcf9f8]/80 dark:bg-[#1c1b1b]/80 backdrop-blur-md no-border bg-surface-container-low/50">
     <div class="flex justify-between items-center w-full px-12 py-6 max-w-[1920px] mx-auto">
         <div class="flex items-center gap-12">
@@ -96,6 +97,32 @@
                 <button class="hover:text-primary transition-colors"><span class="material-symbols-outlined">favorite</span></button>
                 <button class="hover:text-primary transition-colors"><span class="material-symbols-outlined">shopping_bag</span></button>
                 <button class="hover:text-primary transition-colors"><span class="material-symbols-outlined">person</span></button>
+=======
+<nav class="fixed top-0 left-0 right-0 z-50 bg-[#fcf9f8]/80 dark:bg-[#1c1b1b]/80 backdrop-blur-md">
+    <div class="flex justify-between items-center w-full px-8 py-6 max-w-[1920px] mx-auto">
+        <div class="flex items-center gap-12">
+            <a class="text-3xl font-serif italic text-[#1c1b1b] dark:text-[#fcf9f8] tracking-tight" href="index.html">Janka</a>
+            <div class="hidden lg:flex gap-8">
+                <a class="text-[#1c1b1b] dark:text-[#fcf9f8] opacity-80 hover:opacity-100 hover:text-[#735c00] transition-all duration-300 font-label text-xs uppercase tracking-widest" href="index.html">Home</a>
+                <a class="text-[#735c00] dark:text-[#d4af37] border-b border-[#735c00] pb-1 font-label text-xs uppercase tracking-widest" href="catalogue.html">Catalogue</a>
+                <a class="text-[#1c1b1b] dark:text-[#fcf9f8] opacity-80 hover:opacity-100 hover:text-[#735c00] transition-all duration-300 font-label text-xs uppercase tracking-widest" href="search.html">Search</a>
+                <a class="text-[#1c1b1b] dark:text-[#fcf9f8] opacity-80 hover:opacity-100 hover:text-[#735c00] transition-all duration-300 font-label text-xs uppercase tracking-widest" href="feedback.html">Feedback</a>
+                <a class="text-[#1c1b1b] dark:text-[#fcf9f8] opacity-80 hover:opacity-100 hover:text-[#735c00] transition-all duration-300 font-label text-xs uppercase tracking-widest" href="contact.html">Contact</a>
+            </div>
+        </div>
+        <div class="flex items-center gap-6">
+            <div class="flex items-center gap-4">
+                <a class="hidden xl:block text-[#1c1b1b] dark:text-[#fcf9f8] opacity-80 hover:opacity-100 hover:text-[#735c00] transition-all duration-300 font-label text-xs uppercase tracking-widest" href="register.html">Register</a>
+                <button id="theme-toggle" class="hover:text-primary transition-colors active:scale-95 duration-200">
+                    <span class="material-symbols-outlined" id="theme-icon">dark_mode</span>
+                </button>
+                <div class="relative">
+                    <a href="cart.html" class="hover:text-primary transition-colors active:scale-95 duration-200 block">
+                        <span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+                    </a>
+                    <span id="cart-counter" class="absolute -top-1 -right-2 bg-primary text-white text-[9px] font-bold px-[5px] py-[2px] rounded-full">0</span>
+                </div>
+>>>>>>> Shlok
             </div>
         </div>
     </div>
@@ -170,6 +197,7 @@
                     <h2 class="noto-serif text-3xl font-light">The Ring Selection</h2>
                     <span class="manrope text-[10px] uppercase tracking-widest text-secondary">06 Items Found</span>
                 </div>
+<<<<<<< HEAD
                 <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-16">
                     <article class="group relative">
                         <div class="aspect-square bg-surface-container-lowest overflow-hidden mb-6 transition-colors duration-500 group-hover:bg-surface-container-low">
@@ -518,6 +546,10 @@
                         <div class="aspect-square bg-surface-container-lowest overflow-hidden mb-6 transition-colors duration-500 group-hover:bg-surface-container-low">
                         </div>
                     </article>
+=======
+                <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-16">
+                    <!-- Products will be dynamically populated here via products.js & main.js -->
+>>>>>>> Shlok
                 </div>
             </section>
 
@@ -525,5 +557,10 @@
     </div>
 </main>
 
+<<<<<<< HEAD
+=======
+    <script src="js/products.js"></script>
+    <script src="js/main.js"></script>
+>>>>>>> Shlok
 </body>
 </html>

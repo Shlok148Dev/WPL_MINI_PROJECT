@@ -1,0 +1,414 @@
+﻿<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Janka | Luxury Jewellery</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Manrope:wght@300;400;600;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <link href="home-styles.css" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "inverse-primary": "#e9c349",
+                        "on-secondary-container": "#636262",
+                        "on-error": "#ffffff",
+                        "surface-container-high": "#eae7e7",
+                        "on-primary": "#ffffff",
+                        "inverse-on-surface": "#f3f0ef",
+                        "outline-variant": "#d0c5af",
+                        "primary-fixed-dim": "#e9c349",
+                        "tertiary": "#735b1e",
+                        "secondary-container": "#e2dfde",
+                        "surface-container-low": "#f6f3f2",
+                        "tertiary-container": "#ceaf69",
+                        "tertiary-fixed": "#ffdf9a",
+                        "on-background": "#1c1b1b",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed-variant": "#474746",
+                        "surface-dim": "#dcd9d9",
+                        "outline": "#7f7663",
+                        "on-surface-variant": "#4d4635",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "primary-container": "#d4af37",
+                        "surface-variant": "#e5e2e1",
+                        "primary-fixed": "#ffe088",
+                        "surface-tint": "#735c00",
+                        "secondary-fixed": "#e5e2e1",
+                        "primary": "#735c00",
+                        "on-tertiary-fixed": "#251a00",
+                        "background": "#fcf9f8",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-container": "#574204",
+                        "on-primary-container": "#554300",
+                        "on-surface": "#1c1b1b",
+                        "on-primary-fixed": "#241a00",
+                        "secondary": "#5f5e5e",
+                        "inverse-surface": "#313030",
+                        "on-primary-fixed-variant": "#574500",
+                        "surface-container-highest": "#e5e2e1",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#594405",
+                        "error": "#ba1a1a",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "surface": "#fcf9f8",
+                        "surface-container": "#f0eded",
+                        "surface-bright": "#fcf9f8",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed-dim": "#e3c37b"
+                    },
+                    fontFamily: {
+                        "headline": ["Noto Serif"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    },
+                    borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+
+<!-- TopNavBar -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-[#fcf9f8]/80 dark:bg-[#1c1b1b]/80 backdrop-blur-md">
+    <div class="flex justify-between items-center w-full px-8 py-6 max-w-[1920px] mx-auto">
+        <div class="flex items-center gap-12">
+            <a class="text-3xl font-serif italic text-[#1c1b1b] dark:text-[#fcf9f8] tracking-tight" href="#">Janka</a>
+            <div class="hidden lg:flex gap-8">
+                <a class="text-[#735c00] dark:text-[#d4af37] border-b border-[#735c00] pb-1 font-label text-xs uppercase tracking-widest" href="HOMEPAGE.html">Collections</a>
+                <a class="text-[#1c1b1b] dark:text-[#fcf9f8] opacity-80 hover:opacity-100 hover:text-[#735c00] transition-all duration-300 font-label text-xs uppercase tracking-widest" href="catalogue.html">Catalogue</a>
+                <a class="text-[#1c1b1b] dark:text-[#fcf9f8] opacity-80 hover:opacity-100 hover:text-[#735c00] transition-all duration-300 font-label text-xs uppercase tracking-widest" href="REGISTER.html">Register</a>
+                <a class="text-[#1c1b1b] dark:text-[#fcf9f8] opacity-80 hover:opacity-100 hover:text-[#735c00] transition-all duration-300 font-label text-xs uppercase tracking-widest" href="#">Feedback</a>
+            </div>
+        </div>
+        <div class="flex items-center gap-6">
+            <div class="relative group hidden md:block">
+                <input class="bg-transparent border-b border-outline-variant/30 focus:border-primary focus:ring-0 py-1 text-sm w-48 transition-all duration-500 focus:w-64 placeholder:text-outline" placeholder="Search the collection..." type="text"/>
+                <span class="material-symbols-outlined absolute right-0 top-1 text-on-surface-variant text-sm">search</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <a class="hidden xl:block text-[#1c1b1b] dark:text-[#fcf9f8] opacity-80 hover:opacity-100 hover:text-[#735c00] transition-all duration-300 font-label text-xs uppercase tracking-widest" href="#">Search</a>
+                <a class="hidden xl:block text-[#1c1b1b] dark:text-[#fcf9f8] opacity-80 hover:opacity-100 hover:text-[#735c00] transition-all duration-300 font-label text-xs uppercase tracking-widest" href="#">Register</a>
+                <button class="hover:text-primary transition-colors active:scale-95 duration-200"><span class="material-symbols-outlined" data-icon="favorite">favorite</span></button>
+                <button class="hover:text-primary transition-colors active:scale-95 duration-200"><span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span></button>
+                <button class="hover:text-primary transition-colors active:scale-95 duration-200"><span class="material-symbols-outlined" data-icon="person">person</span></button>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<main>
+    <!-- Hero Section -->
+    <section class="relative h-[972px] flex items-center overflow-hidden bg-surface pt-20">
+        <div class="container mx-auto px-8 grid grid-cols-12 items-center gap-12">
+            <div class="col-span-12 md:col-span-5 z-10">
+                <span class="font-label text-xs tracking-[0.3em] text-primary uppercase mb-6 block">The Inaugural Edit</span>
+                <h1 class="text-6xl md:text-8xl leading-tight text-on-surface mb-8">Elegant Jewellery for Every Occasion</h1>
+                <p class="text-on-surface-variant text-lg mb-10 max-w-md leading-relaxed">Discover a collection where timeless heritage meets modern silhouettes. Each piece is meticulously curated for the discerning individual.</p>
+                <div class="flex gap-4">
+                    <button class="bg-gold-gradient text-on-primary px-12 py-5 font-label text-xs uppercase tracking-widest hover:opacity-90 transition-opacity">Shop Now</button>
+                    <button class="border border-outline-variant/20 px-12 py-5 font-label text-xs uppercase tracking-widest hover:bg-surface-container-low transition-colors">View Lookbook</button>
+                </div>
+            </div>
+            <div class="col-span-12 md:col-span-7 relative">
+                <div class="aspect-[4/5] bg-surface-container-low relative">
+                    <img alt="Luxury lifestyle jewellery" class="w-full h-full object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-700 shadow-2xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeq5JSIEdy_2_gONLdc7SQi5__No3qg7JeYyrnLtySMIwWWKI4mfi5DsQiJHe4sxu1s54tGj6KAwBQtUQiStLd56LvP1X_3HfBEh8-iYrJ7ozxwJCnGilDp9t8IFa6ChnkTzT9fIbDhLT2iVRFLk7Uv8QwK4upeRZrf4lEN19QjqyTYz5x0DGVbShjLiHNIzrHVvbeVWUTK8vKnJlwDUBvw2kb6kwj1AGhwRWrWdN3qv1srkQ97UvIK2LeEIDSt-pmHBvzLiazn6c0"/>
+                    <div class="absolute -bottom-12 -left-12 w-64 h-80 hidden md:block border-[12px] border-surface z-20 shadow-xl overflow-hidden">
+                        <img alt="Gold craft detail" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFynfZ6ixrnV8uCqvbTohelQawEHN9ovLU_jOkqVndXq5yL6RzeukDQBkptFs8nCH_WiuQLH3wbHuzHUmBztEc1Ai-FkGy62wQShQctwPOLj5k5k1ateCOKQadtTs5boEBQfYUljQ50dcpn6k0FfhV_Ww_2LgYdVy4gJ9XOQDEbQ7W7dtFE9hXx_nesAEtqN3xauD9VMGhJudch-U2coL0oiEPEQ434KzXTrdFpyQ0CdBq2unAd38nFOLys0tt7YuZO0QRa10r0sJZ"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Grid -->
+    <section class="py-24 bg-surface-container-low">
+        <div class="container mx-auto px-8">
+            <div class="flex justify-between items-end mb-16">
+                <h2 class="text-4xl md:text-5xl">Curated Categories</h2>
+                <a class="font-label text-xs uppercase tracking-widest text-primary border-b border-primary pb-1" href="#">Explore All</a>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 items-start">
+                <!-- Rings -->
+                <div class="group relative aspect-[3/4] overflow-hidden bg-surface-container-lowest">
+                    <img alt="Luxury Rings" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCXr-hWNXCUXSfNxIyo3vB41O122aTI8tKP1heDRU3p3mYm-RKW8hbzJvUi37RsW-6_ji_3tsfaWqc88_Tfl_cZRQ8Z1XQQNhfNwgVcIh8XcvkHQAnYNnQyOWH1Ip7mQ7BLxxuKr9ROgkKf5RN-rhBQEP7vf-LvLqP3SbUwko3Sf_bJ0wmToueMFLSAOHQ-7NaWmqaMrkQykcLPL-loVa2Djnw9_zPWZZrvBU4lF56w1CrgwChWCAJDXy-54E5wwGF6m5um8fR5rWH"/>
+                    <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors"></div>
+                    <div class="absolute bottom-8 left-8">
+                        <h3 class="text-2xl text-white mb-2">Rings</h3>
+                        <p class="text-white/80 font-label text-[10px] tracking-widest uppercase">The Foundation</p>
+                    </div>
+                </div>
+                <!-- Necklaces -->
+                <div class="group relative aspect-[3/4] overflow-hidden bg-surface-container-lowest md:mt-12">
+                    <img alt="Luxury Necklaces" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4L8KGwmJN3oBxV__9fFFmitm2zE6n-k1e10dHAk8lpnbpXN_WIV9tZZQ7GuNueJLrdVDOdClJ4dMOv6uyjg359pEXMJ2Eo_xmqEZhK5Sc174-Yxdrqq1mRpvdltibCu-V98wpi8JEe_vU86Cpi9tDfcclaBWia8x-qzlZgeVzEoFPawXj6TUqXtkp0n_0AgIRriljOyiYwT5niwZwK5O2qLCzUqFTjA9UtFXDC134E-NgR2al4Kcc6eFsLAibZUZFN7KlbeZhN_3b"/>
+                    <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors"></div>
+                    <div class="absolute bottom-8 left-8">
+                        <h3 class="text-2xl text-white mb-2">Necklaces</h3>
+                        <p class="text-white/80 font-label text-[10px] tracking-widest uppercase">Centerpieces</p>
+                    </div>
+                </div>
+                <!-- Earrings -->
+                <div class="group relative aspect-[3/4] overflow-hidden bg-surface-container-lowest">
+                    <img alt="Luxury Earrings" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcsdwckjpXa6MDA1Kwh9ak1Qms77g92odOzXo6hOWvDMMwLj2Ln-vm5REOLM4b5VNci6VyjotydZsUZHj9u2hIrB4FrIzj099agnTk7CJaWE9tfNE-eq27nWyLtlTcS08h33Z6fWZemPVNDzxADwBRP6rFVWZdaOfjMMDW-lUwdosSrrqCG8qh7DMmEnPus2SO2Zp0YwlhVz5mBpcL9MSl_VrgngLrbSS_Fyzh162A3Ovl9M1mcbZQFGNm4hSMHJH5VHTKBoqC2pnu"/>
+                    <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors"></div>
+                    <div class="absolute bottom-8 left-8">
+                        <h3 class="text-2xl text-white mb-2">Earrings</h3>
+                        <p class="text-white/80 font-label text-[10px] tracking-widest uppercase">Subtle Accents</p>
+                    </div>
+                </div>
+                <!-- Bracelets -->
+                <div class="group relative aspect-[3/4] overflow-hidden bg-surface-container-lowest md:mt-12">
+                    <img alt="Luxury Bracelets" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_NixNlTaXBhV6pvtyIcVhZDn0VWLOjo9odHEuuezSRDfSWJnKhANslKAFNbMqJ3HnAw867T7gQv3ZlSFgS04uesNz496rUze0h59xwuIStS10xf9cmX93vRFK0Wkw1hVqI1osXxZbgDv9vBqxVRLU20gdG4r6VHz1_Ht-sUAxdjipHwyldzv5034-jx2u5dgAhXIjrQZXZQbzJwX0ELpTbtwIT9WUAnuhUaKUMBiH7rhr8CRR1rxEvMj7XC55T1T4Rthj2wmtOLi_"/>
+                    <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors"></div>
+                    <div class="absolute bottom-8 left-8">
+                        <h3 class="text-2xl text-white mb-2">Bracelets</h3>
+                        <p class="text-white/80 font-label text-[10px] tracking-widest uppercase">Fluid Motion</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="py-24 bg-surface">
+        <div class="container mx-auto px-8">
+            <div class="text-center mb-20">
+                <span class="font-label text-xs tracking-widest text-primary uppercase block mb-4">The Selection</span>
+                <h2 class="text-5xl">Signature Pieces</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-12">
+                <!-- Product 1 -->
+                <div class="group">
+                    <div class="bg-surface-container-low aspect-square mb-6 overflow-hidden relative flex items-center justify-center">
+                        <img alt="Diamond Band" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbLCrWPLf9Qxa3b8rmHbi6j2BX--lTP_DbFGhxLObSv3KGL-NmVWQ9PJZ1gKgQzpkfuHL5bTSs5dEwP9uCCy6wfxW3AOhKqzlYY8pV0x2OdDEjH4zq7NptWfYzDeY5qIClPZkX-M6Uu7pWJUvD1xCWKhbH3fBRQjnUbq4n2Eub1_utsE4kuBFCnIa1pietTsKLFyHnb41VnhFQA4X49HUvhz9ePGIEVVlNcdI2aOTi5t-oOzlv5gENfjMiL_qVlJgsRrYF1xAmszFV"/>
+                        <button class="absolute top-4 right-4 text-white hover:text-error transition-colors bg-black/10 p-1 backdrop-blur-sm"><span class="material-symbols-outlined text-sm">favorite</span></button>
+                    </div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="text-lg mb-1">Aurelia Gold Band</h3>
+                            <p class="text-on-secondary-container text-xs font-label tracking-widest uppercase mb-2">18K Yellow Gold</p>
+                            <div class="flex items-center gap-1 text-[10px] text-primary mb-4">
+                                <span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-[12px]">star</span>
+                                <span class="ml-2 text-on-surface-variant uppercase font-label tracking-tighter">(24)</span>
+                            </div>
+                        </div>
+                        <span class="text-lg">Γé╣1,03,000</span>
+                    </div>
+                    <button class="w-full border-b border-outline-variant/30 py-3 font-label text-[10px] uppercase tracking-[0.2em] group-hover:border-primary transition-colors text-left flex justify-between items-center">
+                        Add to Cart
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </button>
+                </div>
+                <!-- Product 2 -->
+                <div class="group">
+                    <div class="bg-surface-container-low aspect-square mb-6 overflow-hidden relative flex items-center justify-center">
+                        <img alt="Pearl Drop" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-2s_dKt-0G6XS2ZtwIeyjLj_LWHf2M3WdjSryQq1hJVUKOBui5I5D1H4jsZSz0sZeK_yXUG0UeKYJfFPKj9Y1h_zknsPB5LMaKGShBCwIdlDtqodZG4cUHlRwdzV7clX5WOq_iyeMrW60dNT2YBz8pAmWl47tW2rLxEprB3zo9KoYJFQdWv174RLCXx3xTIk-PAl7LmTKDP7cgCXGSDl3rr8WQSDWjHeoaaC4q5FWUu6CduojQwsAMFS26QqYb6rqPEpoHwo9TUOk"/>
+                        <button class="absolute top-4 right-4 text-white hover:text-error transition-colors bg-black/10 p-1 backdrop-blur-sm"><span class="material-symbols-outlined text-sm">favorite</span></button>
+                    </div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="text-lg mb-1">Ethereal Pearl Drop</h3>
+                            <p class="text-on-secondary-container text-xs font-label tracking-widest uppercase mb-2">South Sea Pearl</p>
+                            <div class="flex items-center gap-1 text-[10px] text-primary mb-4">
+                                <span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="ml-2 text-on-surface-variant uppercase font-label tracking-tighter">(12)</span>
+                            </div>
+                        </div>
+                        <span class="text-lg">Γé╣2,32,000</span>
+                    </div>
+                    <button class="w-full border-b border-outline-variant/30 py-3 font-label text-[10px] uppercase tracking-[0.2em] group-hover:border-primary transition-colors text-left flex justify-between items-center">
+                        Add to Cart
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </button>
+                </div>
+                <!-- Product 3 -->
+                <div class="group">
+                    <div class="bg-surface-container-low aspect-square mb-6 overflow-hidden relative flex items-center justify-center">
+                        <img alt="Gold Bangle" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcnsnDsWxVzS0gtMjeMdbgnJ8FIQVxceGd2K0BBR70DD1fYGJ_gctktx1WyHuMU9LQAsg9y5F5E5QTVUUhz71hyrUs5wL6Cru2zRArbfEa7wFYKHq9jzNHVLI8LG0YjkidnrIDgxeAqIGTkYAcj_HWFtdJQuNxG34UD0JggQ7ExMqtgpS3ZUbuhy9VKBPmrkwQMOGUvIMoayqRrf4-R4y1Jirdx2eFEZ45qhbiWVVUi4EuqaYLeK37z6R7cqfSxYOXuM0g837_5GBz"/>
+                        <button class="absolute top-4 right-4 text-white hover:text-error transition-colors bg-black/10 p-1 backdrop-blur-sm"><span class="material-symbols-outlined text-sm">favorite</span></button>
+                    </div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="text-lg mb-1">Celestial Bangle</h3>
+                            <p class="text-on-secondary-container text-xs font-label tracking-widest uppercase mb-2">18K Solid Gold</p>
+                            <div class="flex items-center gap-1 text-[10px] text-primary mb-4">
+                                <span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-[12px]">star</span>
+                                <span class="ml-2 text-on-surface-variant uppercase font-label tracking-tighter">(48)</span>
+                            </div>
+                        </div>
+                        <span class="text-lg">Γé╣2,81,000</span>
+                    </div>
+                    <button class="w-full border-b border-outline-variant/30 py-3 font-label text-[10px] uppercase tracking-[0.2em] group-hover:border-primary transition-colors text-left flex justify-between items-center">
+                        Add to Cart
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </button>
+                </div>
+                <!-- Product 4 -->
+                <div class="group">
+                    <div class="bg-surface-container-low aspect-square mb-6 overflow-hidden relative flex items-center justify-center">
+                        <img alt="Starlight Hoops" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuApXCgFbuB699w-4J-rZJTaOneNLDFdJ_tfqWEp_2IaTIVxugP-pnVsQ-ed1z7i3qm-RLOsBn175T7rWqQLdBCQp_vjHZ4ToCGQkRLOLLbawGJbCg8jcyDaCP3UIWyXi47Gu32vgCf93LGVrAzZm_2pkThSdwyvCy4u3r5ElO0MJy-90J1aHIUr1OqZ9fNC6WiPXlt7zD-4OOMRGnSFaqvY3cuGmFBqbuirMbe1VR0AybCWHZH4kay2barOU3hN96b-1E5-LH_CtWtg"/>
+                        <button class="absolute top-4 right-4 text-white hover:text-error transition-colors bg-black/10 p-1 backdrop-blur-sm"><span class="material-symbols-outlined text-sm">favorite</span></button>
+                    </div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="text-lg mb-1">Starlight Hoops</h3>
+                            <p class="text-on-secondary-container text-xs font-label tracking-widest uppercase mb-2">Rose Gold &amp; Diamonds</p>
+                            <div class="flex items-center gap-1 text-[10px] text-primary mb-4">
+                                <span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="ml-2 text-on-surface-variant uppercase font-label tracking-tighter">(31)</span>
+                            </div>
+                        </div>
+                        <span class="text-lg">Γé╣1,61,000</span>
+                    </div>
+                    <button class="w-full border-b border-outline-variant/30 py-3 font-label text-[10px] uppercase tracking-[0.2em] group-hover:border-primary transition-colors text-left flex justify-between items-center">
+                        Add to Cart
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promotional Banner -->
+    <section class="relative h-[614px] overflow-hidden">
+        <img alt="Wedding Collection" class="absolute inset-0 w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_HN0W5ooun5LGz5aR3phWp9EGhBeNXjeP2Vioo-su6CSLXBQVm8iR3i_ZhztypRETluNk7c82EhAhV2ZtUMl8lrLzTNkf6mPjbpfetFg_13x_1H_Jb17vODGkLpkJONBU-iDtKoyYWFYz8JRrjS0l50ldVJUNdLV73drhj9o1zZxuzCQbI7r6BQshiJnM3aVABOHJZ6XnWASKvyllIiurOJc1B96jRHkzNDkI58X7oudufhJGxmYItKp1DkXVRvg342V7_Ij-wM7p"/>
+        <div class="absolute inset-0 bg-black/50 flex items-center justify-center text-center p-8">
+            <div class="max-w-2xl">
+                <span class="text-white font-label text-xs tracking-[0.3em] uppercase mb-6 block">Wedding Season Exclusive</span>
+                <h2 class="text-white text-5xl md:text-6xl mb-8">Flat 20% Off on Wedding Collection</h2>
+                <p class="text-white/80 text-lg mb-10 serif italic">Eternal pieces for your most cherished moments.</p>
+                <button class="bg-surface text-on-surface px-12 py-5 font-label text-xs uppercase tracking-widest hover:bg-primary hover:text-white transition-colors">Explore Now</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-24 bg-surface">
+        <div class="container mx-auto px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+                <div class="text-center md:text-left">
+                    <div class="flex justify-center md:justify-start gap-1 text-primary mb-6">
+                        <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                    </div>
+                    <p class="text-xl serif italic mb-6">"The attention to detail in the Azure collection is simply breathtaking. A true curator's eye behind every piece."</p>
+                    <p class="font-label text-xs tracking-widest uppercase">ΓÇö Eleanor Vance</p>
+                </div>
+                <div class="text-center md:text-left">
+                    <div class="flex justify-center md:justify-start gap-1 text-primary mb-6">
+                        <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                    </div>
+                    <p class="text-xl serif italic mb-6">"Finally an atelier that understands the balance between modern architecture and classic heritage."</p>
+                    <p class="font-label text-xs tracking-widest uppercase">ΓÇö Julian Thorne</p>
+                </div>
+                <div class="text-center md:text-left">
+                    <div class="flex justify-center md:justify-start gap-1 text-primary mb-6">
+                        <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                    </div>
+                    <p class="text-xl serif italic mb-6">"The shopping experience was as luxury as the necklace itself. Impeccable service and presentation."</p>
+                    <p class="font-label text-xs tracking-widest uppercase">ΓÇö Clara Beauchamp</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="py-24 bg-surface-container-low border-t border-outline-variant/10">
+        <div class="container mx-auto px-8 max-w-4xl text-center">
+            <h2 class="text-4xl mb-4">Join The Atelier</h2>
+            <p class="text-on-surface-variant mb-12 serif italic">Subscribe to receive early access to new collections and private exhibitions.</p>
+            <form class="flex flex-col md:flex-row gap-4 max-w-lg mx-auto">
+                <input class="flex-1 bg-transparent border-b border-outline-variant/50 focus:border-primary focus:ring-0 py-4 font-body text-sm placeholder:text-outline-variant" placeholder="Your email address" type="email"/>
+                <button class="bg-on-surface text-white px-8 py-4 font-label text-xs uppercase tracking-widest hover:bg-primary transition-colors">Subscribe</button>
+            </form>
+        </div>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-[#f6f3f2] dark:bg-[#121111] mt-24">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-20 max-w-[1440px] mx-auto">
+        <div class="col-span-1 md:col-span-1">
+            <h3 class="text-3xl font-serif italic text-[#1c1b1b] dark:text-[#fcf9f8] mb-8 tracking-tight">Janka</h3>
+            <p class="manrope text-sm tracking-wide text-[#636262] dark:text-[#a09e9d] leading-loose">
+                Defining the essence of luxury through architectural design and timeless heritage. We believe every piece tells a story worth curation.
+            </p>
+            <div class="flex gap-4 mt-8">
+                <a class="text-on-surface-variant hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">share</span></a>
+                <a class="text-on-surface-variant hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">camera</span></a>
+                <a class="text-on-surface-variant hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">alternate_email</span></a>
+            </div>
+        </div>
+        <div>
+            <h4 class="font-label text-xs uppercase tracking-widest mb-8 text-[#735c00] dark:text-[#d4af37]">Shop</h4>
+            <ul class="space-y-4">
+                <li><a class="manrope text-sm tracking-wide text-[#636262] dark:text-[#a09e9d] hover:text-[#1c1b1b] dark:hover:text-white transition-colors" href="#">All Jewellery</a></li>
+                <li><a class="manrope text-sm tracking-wide text-[#636262] dark:text-[#a09e9d] hover:text-[#1c1b1b] dark:hover:text-white transition-colors" href="#">Bridal Collection</a></li>
+                <li><a class="manrope text-sm tracking-wide text-[#636262] dark:text-[#a09e9d] hover:text-[#1c1b1b] dark:hover:text-white transition-colors" href="#">Limited Editions</a></li>
+                <li><a class="manrope text-sm tracking-wide text-[#636262] dark:text-[#a09e9d] hover:text-[#1c1b1b] dark:hover:text-white transition-colors" href="#">Gift Cards</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4 class="font-label text-xs uppercase tracking-widest mb-8 text-[#735c00] dark:text-[#d4af37]">Atelier</h4>
+            <ul class="space-y-4">
+                <li><a class="manrope text-sm tracking-wide text-[#636262] dark:text-[#a09e9d] hover:text-[#1c1b1b] dark:hover:text-white transition-colors" href="#">Sustainability</a></li>
+                <li><a class="manrope text-sm tracking-wide text-[#636262] dark:text-[#a09e9d] hover:text-[#1c1b1b] dark:hover:text-white transition-colors" href="#">Care Guide</a></li>
+                <li><a class="manrope text-sm tracking-wide text-[#636262] dark:text-[#a09e9d] hover:text-[#1c1b1b] dark:hover:text-white transition-colors" href="#">Heritage</a></li>
+                <li><a class="manrope text-sm tracking-wide text-[#636262] dark:text-[#a09e9d] hover:text-[#1c1b1b] dark:hover:text-white transition-colors" href="#">Journal</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4 class="font-label text-xs uppercase tracking-widest mb-8 text-[#735c00] dark:text-[#d4af37]">Support</h4>
+            <ul class="space-y-4">
+                <li><a class="manrope text-sm tracking-wide text-[#636262] dark:text-[#a09e9d] hover:text-[#1c1b1b] dark:hover:text-white transition-colors" href="#">Shipping &amp; Returns</a></li>
+                <li><a class="manrope text-sm tracking-wide text-[#636262] dark:text-[#a09e9d] hover:text-[#1c1b1b] dark:hover:text-white transition-colors" href="#">Privacy Policy</a></li>
+                <li><a class="manrope text-sm tracking-wide text-[#636262] dark:text-[#a09e9d] hover:text-[#1c1b1b] dark:hover:text-white transition-colors" href="#">Contact</a></li>
+                <li><a class="manrope text-sm tracking-wide text-[#636262] dark:text-[#a09e9d] hover:text-[#1c1b1b] dark:hover:text-white transition-colors" href="#">FAQs</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="border-t border-outline-variant/10 px-12 py-8 max-w-[1440px] mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+        <span class="manrope text-xs tracking-wide text-[#636262] dark:text-[#a09e9d]">┬⌐ 2024 Janka. All Rights Reserved.</span>
+        <div class="flex gap-8">
+            <span class="manrope text-[10px] tracking-widest uppercase text-[#636262]">Visa</span>
+            <span class="manrope text-[10px] tracking-widest uppercase text-[#636262]">Mastercard</span>
+            <span class="manrope text-[10px] tracking-widest uppercase text-[#636262]">Amex</span>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

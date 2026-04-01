@@ -1,0 +1,688 @@
+JANKA CREATIONS
+Jewelry E-Commerce Website
+Web Programming Lab  —  Complete Team Guide
+Team Members
+Shlok  |  Spriha  |  Arnav
+Tech Stack
+HTML5, CSS3, JavaScript, PostgreSQL
+Collaboration
+GitHub (shared repository)
+Timeline
+1 Week — 7 Days
+Total Marks
+15  (Frontend: 8  |  Database: 2  |  PPT: 5)
+Core Rule
+Every line of code must be hand-written and explainable by you
+Important: This project was originally built as 'Janka Creations' but was vibe coded. The goal now is to rebuild it from scratch — clean, self-engineered, hand-written code that each of you fully understands. No copy-pasting from the old project.
+1. Project Overview
+Problem Statement
+Janka Creations is a web-based jewelry catalog system that allows customers to browse products by category, search for specific items, view detailed product information, contact the business, register for updates, and provide feedback.
+Required Pages
+Homepage (index.html)
+Catalogue with category filter (catalogue.html)
+Product Details with related products (product.html)
+Search with keyword + category filter (search.html)
+Contact Us with form (contact.html)
+Registration form (register.html)
+Feedback form with star rating (feedback.html)
+Project Folder Structure
+jewelry-store/
+├── index.html              # Homepage         (Spriha)
+├── catalogue.html          # Catalogue        (Spriha)
+├── product.html            # Product Details  (Shlok)
+├── search.html             # Search           (Arnav)
+├── contact.html            # Contact Us       (Arnav)
+├── register.html           # Register         (Spriha)
+├── feedback.html           # Feedback         (Arnav)
+├── css/
+│   ├── style.css           # Main styles      (Spriha)
+│   └── responsive.css      # Mobile styles    (Spriha)
+├── js/
+│   ├── main.js             # Common functions (Spriha)
+│   ├── products.js         # Product data     (Shlok)
+│   ├── search.js           # Search logic     (Arnav)
+│   └── form-validation.js  # Form validation  (Arnav)
+├── images/                 # 20 product images
+├── database/
+│   ├── schema.sql          # DB schema        (Shlok)
+│   ├── data.sql            # Sample data      (Shlok)
+│   └── queries.txt         # Common queries   (Shlok)
+└── README.md               # Setup guide      (all three)
+2. GitHub Workflow — Complete Guide
+This section covers everything from first-time setup to daily workflow. Read this before touching any code.
+2.1  One-Time Setup (Do This First — All Three of You)
+Step 1 — Install Git
+Download and install Git from https://git-scm.com/downloads. During installation on Windows, keep all default options. After installing, open a terminal (Command Prompt or VS Code terminal) and verify:
+git --version    # should print something like: git version 2.x.x
+Step 2 — Configure Your Identity (Each Person Does This Once)
+Run these two commands in your terminal, using your own name and the email linked to your GitHub account:
+git config --global user.name "Your Name"
+git config --global user.email "your@email.com"
+Step 3 — Create the GitHub Repository (Shlok Does This)
+Go to github.com and sign in
+Click the green 'New' button (top left)
+Repository name: jewelry-store
+Set visibility to Private (add Spriha and Arnav as collaborators after)
+Check 'Add a README file'
+Click 'Create repository'
+Step 4 — Add Collaborators (Shlok Does This)
+Open the repository on GitHub
+Go to Settings > Collaborators > Add people
+Search for Spriha's and Arnav's GitHub usernames and add both
+They will receive an email — they must accept the invite before they can push code
+Step 5 — Clone the Repository (All Three Do This)
+Everyone clones the repo to their own computer. On the GitHub repo page, click the green 'Code' button and copy the HTTPS URL, then run:
+git clone https://github.com/YOUR-USERNAME/jewelry-store.git
+cd jewelry-store
+This creates a jewelry-store/ folder on your computer that is connected to GitHub.
+2.2  Repository Structure — Branches
+Use branches to avoid accidentally overwriting each other's work. Each person works on their own branch.
+main
+The final, stable version. Only merge into main when code is tested and working.
+shlok
+Shlok's working branch for database files, product.html, products.js
+spriha
+Spriha's working branch for homepage, catalogue, CSS, main.js
+arnav
+Arnav's working branch for search, contact, register, feedback, form-validation.js
+Creating Your Branch (Each Person Runs This Once)
+# Shlok runs:
+git checkout -b shlok
+# Spriha runs:
+git checkout -b spriha
+# Arnav runs:
+git checkout -b arnav
+2.3  Daily Workflow — What to Do Every Time You Work
+Follow these steps every single time you sit down to code. This keeps everything in sync.
+Before You Start Coding — Pull Latest Changes
+git checkout main          # switch to main branch
+git pull origin main       # get latest updates from GitHub
+git checkout your-branch   # switch back to your branch  (e.g. shlok / spriha / arnav)
+git merge main             # bring any new changes into your branch
+While Coding — Save Your Work to GitHub
+After completing a meaningful chunk of work (a feature, a page, a fix), run:
+git add .                          # stage all your changes
+git commit -m 'Add search page'   # describe what you did (keep it short & clear)
+git push origin your-branch       # push to GitHub
+Good Commit Message Examples
+Add database schema
+When you create schema.sql
+Add 20 products to data.sql
+When you fill in sample data
+Create homepage HTML structure
+When index.html structure is done
+Add category filter to catalogue
+When filter buttons work
+Fix phone validation bug
+When fixing a bug in form-validation.js
+Add star rating to feedback
+When star click logic works
+At the End of Your Day — Push Everything
+git add .
+git commit -m "End of day — work in progress on contact page"
+git push origin your-branch
+2.4  Merging Into Main (Do This on Integration Day — Day 5)
+When a team member's work is fully tested and ready, merge it into main so everyone gets the latest combined code.
+How to Merge (Example: Shlok Merging His Branch)
+git checkout main          # switch to main
+git pull origin main       # make sure main is up to date
+git merge shlok            # merge shlok's branch into main
+git push origin main       # push the updated main to GitHub
+Repeat this for each person's branch: spriha and arnav.
+Recommended Merge Order on Day 5
+Shlok merges first — products.js must be in main before Spriha and Arnav can test
+Spriha merges second — CSS is needed by everyone's pages
+Arnav merges last — form pages depend on shared CSS being present
+2.5  Handling Merge Conflicts
+A conflict happens when two people edit the same part of the same file. This is rare if you each own separate files, but it can happen in shared files like README.md.
+Git will mark the conflict inside the file like this:
+<<<<<<< HEAD
+Your version of the line
+=======
+Other person's version of the line
+>>>>>>> their-branch
+To fix: open the file, delete the conflict markers, keep the correct version, then:
+git add .
+git commit -m "Resolve merge conflict in README"
+git push origin main
+Best way to avoid conflicts: each person only edits their own files. Only README.md and index.html may need coordination.
+2.6  Useful Git Commands — Quick Reference
+Command
+What it does
+git status
+Shows which files are changed / staged / untracked
+git log --oneline
+Shows commit history in a compact list
+git diff
+Shows exactly what lines changed in your files
+git checkout -b branch-name
+Creates and switches to a new branch
+git checkout main
+Switch to the main branch
+git pull origin main
+Download latest changes from GitHub main
+git push origin branch-name
+Upload your branch to GitHub
+git stash
+Temporarily save uncommitted work so you can switch branch
+git stash pop
+Bring back your stashed work
+git reset --hard HEAD
+Undo ALL uncommitted changes (use with caution!)
+2.7  GitHub in VS Code (Easier Alternative to Terminal)
+If you prefer not to use the terminal, VS Code has built-in Git support:
+Open your cloned folder in VS Code
+Click the 'Source Control' icon on the left sidebar (looks like a branch)
+You'll see all changed files listed — click '+' to stage them
+Type a commit message in the box and press Ctrl+Enter to commit
+Click the '...' menu and select 'Push' to push to GitHub
+You can also install the 'GitHub Pull Requests' extension for a more complete experience.
+2.8  GitHub Workflow — Day by Day Summary
+Day
+GitHub Activity
+Day 1
+Shlok creates repo, adds Spriha and Arnav as collaborators. Everyone clones and creates their own branch (shlok / spriha / arnav). Shlok creates the folder structure and pushes it so everyone has a base to work from.
+Day 2
+Everyone pulls latest main, works on their branch, commits progress at end of day and pushes.
+Day 3
+Shlok pushes products.js to his branch and notifies team. Spriha and Arnav can pull it from his branch: git fetch origin shlok && git checkout origin/shlok -- js/products.js
+Day 4
+Everyone continues on their branch. Spriha pushes style.css and responsive.css. Arnav and Shlok add the CSS link tags to their pages.
+Day 5
+Integration day: merge all branches into main in order (shlok → spriha → arnav). Test the combined site. Fix any broken links or missing files. Push final integrated main.
+Day 6
+Minor fixes only. Each person commits their PPT screenshot sources. One person creates the final .pptx and pushes it.
+Day 7
+Final push. Tag the release: git tag v1.0 && git push origin v1.0. Zip the repo for submission.
+SHLOK'S TASKS
+Responsibilities: Database Design (schema.sql, data.sql, queries.txt) + products.js + Product Details Page (product.html)
+Part 1 — Database Design
+Task 1: schema.sql — 4 Normalized Tables
+-- 1. CATEGORIES
+CREATE TABLE categories (
+    category_id   SERIAL PRIMARY KEY,
+    category_name VARCHAR(50) NOT NULL,
+    description   TEXT
+);
+-- 2. PRODUCTS
+CREATE TABLE products (
+    product_id      SERIAL PRIMARY KEY,
+    product_name    VARCHAR(100) NOT NULL,
+    description     TEXT,
+    price           DECIMAL(10,2) NOT NULL,
+    category_id     INT REFERENCES categories(category_id),
+    image_url       VARCHAR(200),
+    stock_quantity  INT DEFAULT 0,
+    created_date    DATE DEFAULT CURRENT_DATE
+);
+-- 3. CONTACT_SUBMISSIONS
+CREATE TABLE contact_submissions (
+    submission_id   SERIAL PRIMARY KEY,
+    name            VARCHAR(100) NOT NULL,
+    email           VARCHAR(100) NOT NULL,
+    message         TEXT NOT NULL,
+    submission_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+-- 4. USER_REGISTRATIONS
+CREATE TABLE user_registrations (
+    user_id           SERIAL PRIMARY KEY,
+    full_name         VARCHAR(100) NOT NULL,
+    email             VARCHAR(100) UNIQUE NOT NULL,
+    phone             VARCHAR(15),
+    registration_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+Task 2: data.sql — 20 Products across 4 Categories
+INSERT INTO categories (category_name, description) VALUES
+  ('Necklaces',  'Elegant necklaces for every occasion'),
+  ('Earrings',   'Beautiful earrings to complement your style'),
+  ('Rings',      'Timeless rings that symbolize love'),
+  ('Bracelets',  'Delicate bracelets for everyday wear');
+-- 5 necklaces (category_id = 1), 5 earrings (2), 5 rings (3), 5 bracelets (4)
+INSERT INTO products (product_name, description, price, category_id, image_url, stock_quantity) VALUES
+  ('Diamond Solitaire Necklace', 'Classic diamond pendant on 18K gold chain', 45000, 1, 'images/necklace1.jpg', 5),
+  ('Pearl Drop Earrings',        'Freshwater pearls with silver hooks',        8500,  2, 'images/earring1.jpg',  12),
+  ('Rose Gold Engagement Ring',  '1 carat diamond on rose gold band',          75000, 3, 'images/ring1.jpg',     3),
+  ('Gold Charm Bracelet',        '22K gold with traditional charms',           32000, 4, 'images/bracelet1.jpg', 8),
+  -- ... add 16 more rows to reach 20 total
+  ('Emerald Pendant Necklace',   'Natural emerald with gold setting',          52000, 1, 'images/necklace2.jpg', 7);
+Task 3: queries.txt — Common SQL Queries
+-- All products with their category names
+SELECT p.product_name, p.price, c.category_name
+FROM products p JOIN categories c ON p.category_id = c.category_id;
+-- Search by keyword
+SELECT * FROM products WHERE product_name ILIKE '%diamond%';
+-- Products by category
+SELECT * FROM products WHERE category_id = 1;
+-- Count per category
+SELECT c.category_name, COUNT(p.product_id) AS product_count
+FROM categories c LEFT JOIN products p ON c.category_id = p.category_id
+GROUP BY c.category_name;
+Part 2 — products.js & Product Details Page
+Task 4: js/products.js — Shared Data Array
+This file is the source of truth for all product data on the frontend. All pages import it.
+const productsData = [
+  { id: 1, name: 'Diamond Solitaire Necklace',
+    description: 'Classic diamond pendant on 18K gold chain.',
+    price: 45000, category: 'Necklaces',
+    image: 'images/necklace1.jpg', stock: 5 },
+  // ... 19 more objects — 5 per category
+];
+window.productsData = productsData;
+Task 5: product.html — Product Details Page Logic
+// Read product ID from URL: product.html?id=3
+const params  = new URLSearchParams(window.location.search);
+const id      = parseInt(params.get('id'));
+const product = productsData.find(p => p.id === id);
+// Render product details
+document.getElementById('product-container').innerHTML = `
+  <div class='product-image'><img src='${product.image}' alt='${product.name}'></div>
+  <div class='product-info'>
+    <h1>${product.name}</h1>
+    <p class='price'>Rs. ${product.price.toLocaleString()}</p>
+    <p>${product.description}</p>
+    <p>Stock: ${product.stock} available</p>
+    <button onclick="alert('Contact us to place an order')">Inquire Now</button>
+  </div>`;
+// Show 3 related products from same category
+const related = productsData
+  .filter(p => p.category === product.category && p.id !== id)
+  .slice(0, 3);
+Shlok's Day-by-Day Timeline
+Day 1
+Create folder structure. Create + push schema.sql. Create your 'shlok' branch.
+Day 2
+Write data.sql — all 20 products. Run in pgAdmin and verify rows exist.
+Day 3
+Create products.js with all 20 objects. Push to your branch. Notify team.
+Day 4
+Build product.html — HTML structure + JS logic (URL param reading, related products section).
+Day 5
+Write queries.txt. Merge shlok branch into main (first merge of the day).
+Day 6
+PPT slides: Title slide, DB Schema ERD, pgAdmin screenshot, product.html screenshot.
+Day 7
+Final testing, demo prep, help team if needed.
+SPRIHA'S TASKS
+Responsibilities: Homepage (index.html) + Catalogue (catalogue.html) + Register form (register.html) + style.css + responsive.css + main.js
+Part 1 — Homepage (index.html)
+Four sections: sticky navigation, hero with CTA, featured products grid (4 items from JS), and about section.
+<nav class='navbar'>
+  <div class='logo'>Janka Creations</div>
+  <ul class='nav-links'>
+    <li><a href='index.html'>Home</a></li>
+    <li><a href='catalogue.html'>Catalogue</a></li>
+    <li><a href='search.html'>Search</a></li>
+    <li><a href='contact.html'>Contact</a></li>
+    <li><a href='register.html'>Register</a></li>
+    <li><a href='feedback.html'>Feedback</a></li>
+  </ul>
+  <div class='menu-toggle'>&#9776;</div>   <!-- hamburger icon -->
+</nav>
+<section class='hero'>
+  <div class='hero-content'>
+    <h1>Timeless Elegance</h1>
+    <p>Handcrafted jewelry for every occasion</p>
+    <a href='catalogue.html' class='btn-primary'>Shop Now</a>
+  </div>
+</section>
+<section class='featured-products'>
+  <h2>Featured Products</h2>
+  <div class='product-grid' id='featured-grid'></div>   <!-- JS fills this -->
+</section>
+<script src='js/products.js'></script>
+<script src='js/main.js'></script>
+Part 2 — Catalogue (catalogue.html)
+All 20 products with filter buttons. Clicking a button re-renders the grid filtered by category.
+<div class='filter-buttons'>
+  <button class='filter-btn active' data-category='all'>All</button>
+  <button class='filter-btn' data-category='Necklaces'>Necklaces</button>
+  <button class='filter-btn' data-category='Earrings'>Earrings</button>
+  <button class='filter-btn' data-category='Rings'>Rings</button>
+  <button class='filter-btn' data-category='Bracelets'>Bracelets</button>
+</div>
+<div class='product-grid' id='catalogue-grid'></div>
+// JS:
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    displayProducts(btn.dataset.category);
+  });
+});
+Part 3 — Register Page (register.html)
+A simple centered card with 3 fields. Keep it clean and consistent with the overall site style.
+<main class='register-page'>
+  <div class='register-form'>
+    <h1>Create Account</h1>
+    <p>Register to receive updates and exclusive offers</p>
+    <div class='success-message' id='register-success'>
+      Registration successful! Welcome to Janka Creations.
+    </div>
+    <form id='register-form' onsubmit='return submitRegisterForm(event)'>
+      <div class='form-group'>
+        <label for='fullname'>Full Name *</label>
+        <input type='text' id='fullname' name='fullname' required>
+        <span class='error-message' id='fullname-error'>Please enter your full name</span>
+      </div>
+      <div class='form-group'>
+        <label for='reg-email'>Email Address *</label>
+        <input type='email' id='reg-email' name='email' required>
+        <span class='error-message' id='reg-email-error'>Please enter a valid email</span>
+      </div>
+      <div class='form-group'>
+        <label for='phone'>Phone Number *</label>
+        <input type='tel' id='phone' name='phone' required>
+        <span class='error-message' id='phone-error'>Please enter a valid 10-digit number</span>
+      </div>
+      <button type='submit' class='btn-primary'>Register</button>
+    </form>
+  </div>
+</main>
+<script src='js/form-validation.js'></script>
+Part 4 — main.js
+function displayFeaturedProducts() {
+  const grid = document.getElementById('featured-grid');
+  if (!grid) return;
+  grid.innerHTML = productsData.slice(0, 4).map(p => `
+    <div class='product-card'>
+      <img src='${p.image}' alt='${p.name}'>
+      <h3>${p.name}</h3>
+      <p class='price'>Rs. ${p.price.toLocaleString()}</p>
+      <a href='product.html?id=${p.id}' class='btn-small'>View Details</a>
+    </div>`).join('');
+}
+function setupMobileMenu() {
+  document.querySelector('.menu-toggle')?.addEventListener('click', () => {
+    document.querySelector('.nav-links').classList.toggle('active');
+  });
+}
+document.addEventListener('DOMContentLoaded', () => {
+  displayFeaturedProducts();
+  setupMobileMenu();
+});
+Part 5 — CSS
+style.css — Key Variables & Components
+:root {
+  --primary:    #d4af37;  /* Gold */
+  --secondary:  #1a1a1a;  /* Dark */
+  --text:       #333333;
+  --bg:         #f9f9f9;
+  --white:      #ffffff;
+  --border:     #e0e0e0;
+}
+/* Key sections to style: navbar, hero, .product-grid, .product-card,
+   .filter-btn, .product-container (2-col grid for details page),
+   form inputs, .btn-primary, .btn-secondary, footer */
+responsive.css — Mobile Breakpoint
+@media (max-width: 768px) {
+  .menu-toggle  { display: block; }
+  .nav-links    { display: none; flex-direction: column; }
+  .nav-links.active { display: flex; }
+  .product-grid { grid-template-columns: 1fr; }
+  .product-container { grid-template-columns: 1fr; }
+}
+Spriha's Day-by-Day Timeline
+Day 1
+Create index.html — full HTML (nav, hero, featured grid, about, footer). Push to spriha branch.
+Day 2
+Create catalogue.html — filter buttons and product grid HTML. Push.
+Day 3
+Create register.html — centered card with 3 fields and validation hooks. Push.
+Day 4
+Write style.css — full stylesheet with CSS variables, all components. Push.
+Day 5
+Write responsive.css + main.js. Test mobile at 375px. Integrate with products.js. Merge spriha into main.
+Day 6
+PPT slides: Problem Statement, Objectives, homepage screenshot, catalogue screenshot.
+Day 7
+Final polish — check that your CSS applies cleanly on all team pages.
+ARNAV'S TASKS
+Responsibilities: Search page + Contact form + Feedback form + form-validation.js
+Part 1 — Search Page (search.html + js/search.js)
+<!-- HTML -->
+<input type='text' id='search-input' placeholder='Search jewelry...'>
+<button onclick='performSearch()' class='btn-primary'>Search</button>
+<div class='filter-buttons'>  <!-- same category buttons as catalogue --> </div>
+<div id='search-results'></div>
+// search.js
+let selectedCategory = 'all';
+function performSearch() {
+  const term = document.getElementById('search-input').value.toLowerCase();
+  const results = productsData.filter(p =>
+    (p.name.toLowerCase().includes(term) ||
+     p.description.toLowerCase().includes(term)) &&
+    (selectedCategory === 'all' || p.category === selectedCategory)
+  );
+  displayResults(results);
+}
+// Also trigger on Enter key:
+document.getElementById('search-input').addEventListener('keypress', e => {
+  if (e.key === 'Enter') performSearch();
+});
+Part 2 — Contact & Feedback Pages
+contact.html — Two-Column Layout
+Left column: form with Name, Email, Message. Right column: address, phone, email, hours.
+feedback.html — Star Rating + Form
+<!-- Star rating HTML -->
+<div class='stars' id='rating-stars'>
+  <span class='star' data-rating='1'>&#9733;</span>
+  <span class='star' data-rating='2'>&#9733;</span>
+  <span class='star' data-rating='3'>&#9733;</span>
+  <span class='star' data-rating='4'>&#9733;</span>
+  <span class='star' data-rating='5'>&#9733;</span>
+</div>
+<input type='hidden' id='rating' value='0'>
+// JS: clicking a star fills all stars up to that rating
+document.querySelectorAll('.star').forEach(star => {
+  star.addEventListener('click', () => {
+    const r = parseInt(star.dataset.rating);
+    document.getElementById('rating').value = r;
+    document.querySelectorAll('.star').forEach((s, i) =>
+      s.classList.toggle('active', i < r));
+  });
+});
+Part 3 — form-validation.js
+// Helper functions
+function validateEmail(email) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+function validatePhone(phone) {
+  return /^[0-9]{10}$/.test(phone);
+}
+// Pattern for every form submit handler:
+function submitContactForm(e) {
+  e.preventDefault();
+  let valid = true;
+  const name = document.getElementById('name').value.trim();
+  if (name === '') {
+    document.getElementById('name-error').style.display = 'block';
+    valid = false;
+  } else {
+    document.getElementById('name-error').style.display = 'none';
+  }
+  // ... repeat for email and message fields
+  if (valid) {
+    document.getElementById('success-message').style.display = 'block';
+    document.getElementById('contact-form').reset();
+    setTimeout(() => document.getElementById('success-message').style.display = 'none', 3000);
+  }
+}
+Arnav's Day-by-Day Timeline
+Day 1
+Create search.html full structure + search.js (search + category filter logic). Push to arnav branch.
+Day 2
+Create contact.html — two-column layout with form and contact info. Push.
+Day 3
+Create feedback.html — star rating HTML + JS logic. Push.
+Day 4
+Write form-validation.js — contact, register, and feedback validators + helper functions. Push.
+Day 5
+Test all forms thoroughly. Pull Spriha's CSS. Merge arnav branch into main (last merge).
+Day 6
+PPT slides: screenshots of search, contact, feedback pages + Conclusion & Future Scope slide.
+Day 7
+Final testing, demo prep.
+6. Full Week Timeline
+Day
+Shlok
+Spriha
+Arnav
+Day 1
+Schema.sql + create tables in pgAdmin
+index.html structure
+search.html + search.js
+Day 2
+data.sql — 20 products
+catalogue.html structure
+contact.html
+Day 3
+products.js — push & share
+style.css + register.html
+feedback.html
+Day 4
+product.html + JS logic
+responsive.css + main.js
+form-validation.js
+Day 5
+queries.txt + merge shlok → main
+Merge spriha → main
+Test forms + merge arnav → main
+Day 6
+PPT: Title, DB, data, product page
+PPT: Problem, Objectives, Home, Catalogue
+PPT: Forms screenshots, Conclusion
+Day 7
+Final testing + demo prep
+Final styling checks
+Final testing + demo prep
+7. PPT Presentation Guide — 10 Slides
+#
+Slide Title
+Owner
+Content
+1
+Title Slide
+Shlok
+Project name, team names, semester, date
+2
+Problem Statement
+Spriha
+Challenge, customer need, proposed solution
+3
+Objectives
+Spriha
+7 key goals — pages, DB, search, forms, responsive
+4
+Database Schema
+Shlok
+ERD diagram showing 4 tables and FK relationships
+5
+Sample Data
+Shlok
+pgAdmin screenshot of products table (20 rows visible)
+6
+Homepage
+Spriha
+Screenshot + list: hero, featured products, about
+7
+Catalogue Page
+Spriha
+Screenshot + list: 20 products, filter buttons
+8
+Product Details
+Shlok
+Screenshot + list: image, info, related products
+9
+Forms & Search
+Arnav
+3 screenshots: search, contact, feedback — plus form validation demo
+10
+Conclusion
+Arnav
+Features list, tech stack, future scope (cart, payments, admin)
+8. Testing Checklist
+Frontend Pages
+Homepage loads without console errors
+All 6 nav links work correctly from every page
+Featured products show 4 items on homepage
+Catalogue shows all 20 products on load
+Category filter buttons work and update the grid
+Product details page loads correct product from ?id= URL param
+Related products show 3 items from same category
+Search finds products by name and description
+No-results message shows when nothing matches
+Contact form shows errors for empty/invalid fields
+Register form validates email format and 10-digit phone
+Feedback star rating highlights correctly on click
+All forms reset after successful submit
+Success messages appear, then disappear after 3 seconds
+No broken image links (all 20 images load)
+Database
+All 4 tables created with no SQL errors
+20 products inserted — 5 per category
+Foreign key (products.category_id → categories) is correctly defined
+All queries in queries.txt run without errors in pgAdmin
+Responsive / Mobile (resize browser to 375px)
+Hamburger menu icon (☰) appears at 375px width
+Nav links collapse and expand on menu click
+Product grid shows single column on mobile
+Product details stacks image above info vertically
+Forms are usable with touch / small keyboard
+GitHub
+All files are pushed to GitHub (check the repo online)
+main branch has the final integrated code
+No sensitive data (passwords, API keys) committed
+README.md in the repo explains how to run the project
+9. Rubric Mapping — How to Get Full Marks
+Component
+Marks
+How to Score Excellent
+Front-End Design
+7–8 / 8
+All 6+ pages present. Consistent nav on every page. Professional gold/dark theme. Responsive at 375px. Aligns clearly with jewelry catalog problem statement.
+Database Schema
+2 / 2
+Normalized 4-table schema. PK on every table. FK: products.category_id → categories. Correct data types. ERD shown clearly in PPT.
+Presentation
+5 / 5
+Clear problem understanding. 10 well-structured slides. ERD included. Screenshots of all major pages. Smooth live demo. Each person explains their own part confidently.
+10. Submission Guidelines
+What to Submit
+jewelry-store.zip — download the final ZIP from GitHub (Code → Download ZIP on the main branch)
+project-presentation.pptx — 10 slides combined into one file
+How to Download ZIP from GitHub
+1. Open your GitHub repo in the browser
+2. Make sure you're on the 'main' branch
+3. Click the green 'Code' button
+4. Click 'Download ZIP'
+5. Rename the downloaded file to: JankaCreations_WebProg_MiniProject.zip
+README.md for GitHub Repo
+Add this to the README.md file in the root of your repo:
+# Janka Creations — Jewelry E-Commerce Website
+Web Programming Lab Mini Project
+**Team:** Shlok | Spriha | Arnav
+**Tech:** HTML5, CSS3, JavaScript, PostgreSQL
+## How to Run
+1. Clone the repo: `git clone https://github.com/your-username/jewelry-store.git`
+2. Open `index.html` in Chrome (or use VS Code Live Server)
+## Database Setup
+1. Install PostgreSQL
+2. Create database: `jewelry_store`
+3. Run `database/schema.sql` to create tables
+4. Run `database/data.sql` to insert sample data
+## Pages
+- Homepage, Catalogue, Product Details, Search, Contact, Register, Feedback
+Final Pre-Submission Checklist
+main branch on GitHub has all 7 HTML pages
+products.js has all 20 products
+CSS (style.css + responsive.css) linked on every page
+All forms validate and show success messages
+Database has all 4 tables and 20 products
+PPT has 10 slides with screenshots
+README.md in the GitHub repo is filled out
+Downloaded ZIP can be extracted and opened without errors
+Tested on mobile view (375px)
+All team member names appear in PPT title slide
+Each person can explain their own code without reading from notes
+Final tip for the demo: each person explains and demonstrates their own pages. Shlok walks through the database and product page. Spriha walks through homepage and catalogue. Arnav walks through search and all the forms. Be ready to explain any line of code that is asked about.
+You've got this — all the best, team!

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart | Janka Creations</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#775a19',
+                        'primary-container': '#c5a059',
+                        background: '#fcf9f8',
+                        'on-background': '#1c1b1b',
+                        surface: '#fcf9f8',
+                        'on-surface': '#1c1b1b',
+                        'surface-variant': '#e7e1de',
+                        'on-surface-variant': '#494644',
+                        error: '#ba1a1a',
+                    },
+                    fontFamily: {
+                        serif: ['"Noto Serif"', 'serif'],
+                        sans: ['Manrope', 'sans-serif'],
+                        label: ['Manrope', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&family=Noto+Serif:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,200,0,0" />
+    <style>
+        body { font-family: 'Manrope', sans-serif; }
+        .serif { font-family: '"Noto Serif"', serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24; }
+    </style>
+</head>
+<body class="bg-[#fcf9f8] text-[#1c1b1b] dark:bg-[#121111] dark:text-[#fcf9f8] transition-colors duration-300 antialiased overflow-x-hidden">
+    <!-- Top Nav Bar -->
+    <header class="fixed w-full top-0 z-50 bg-[#fcf9f8]/90 dark:bg-[#121111]/90 backdrop-blur-md border-b border-surface-variant/30 transition-colors duration-300">
+        <div class="max-w-[1440px] mx-auto px-6 h-20 flex items-center justify-between">
+            <nav class="hidden md:flex gap-8 w-1/3">
+                <a class="font-label text-xs tracking-[0.2em] uppercase text-on-surface hover:text-primary transition-colors" href="catalogue.html">Collection</a>
+                <a class="font-label text-xs tracking-[0.2em] uppercase text-on-surface hover:text-primary transition-colors" href="search.html">Search</a>
+            </nav>
+            <a href="index.html" class="text-3xl font-serif italic tracking-tight text-center w-1/3 hover:opacity-80 transition-opacity">Janka</a>
+            <div class="flex items-center justify-end gap-6 w-1/3">
+                <button id="theme-toggle" class="hover:text-primary transition-colors">
+                    <span class="material-symbols-outlined text-[20px]">light_mode</span>
+                </button>
+                <a href="register.html" class="hover:text-primary transition-colors">
+                    <span class="material-symbols-outlined text-[20px]">person</span>
+                </a>
+                <a href="cart.html" class="relative hover:text-primary transition-colors">
+                    <span class="material-symbols-outlined text-[20px]">shopping_bag</span>
+                    <span class="cart-count absolute -top-1 -right-2 bg-primary text-white text-[9px] w-4 h-4 rounded-full flex items-center justify-center font-semibold">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-32 pb-24 px-6 md:px-12 max-w-[1440px] mx-auto min-h-[70vh]">
+        <h1 class="text-4xl md:text-5xl font-serif italic mb-12 tracking-tight text-center">Your Cart</h1>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            <!-- Cart Items -->
+            <div class="lg:col-span-2">
+                <div id="cart-items" class="space-y-6">
+                    <!-- Items rendered by JS -->
+                </div>
+            </div>
+
+            <!-- Order Summary -->
+            <div class="bg-stone-50 dark:bg-[#1a1919] p-8 h-fit border border-surface-variant/30">
+                <h2 class="text-xl font-serif italic mb-6">Order Summary</h2>
+                
+                <div class="space-y-4 mb-6 pb-6 border-b border-surface-variant/30">
+                    <div class="flex justify-between items-center text-sm">
+                        <span class="text-on-surface-variant font-medium">Subtotal</span>
+                        <span class="font-serif italic" id="cart-main-subtotal">₹0</span>
+                    </div>
+                    <div class="flex justify-between items-center text-sm mt-4">
+                        <span class="text-on-surface-variant font-medium">Shipping</span>
+                        <span class="font-serif italic">Calculated</span>
+                    </div>
+                </div>
+
+                <div class="flex justify-between items-center mb-8">
+                    <span class="font-label text-xs uppercase tracking-widest">Total</span>
+                    <span class="text-2xl font-serif italic text-primary" id="cart-total">₹0</span>
+                </div>
+
+                <button onclick="checkout()" class="w-full bg-[#1c1b1b] dark:bg-white text-white dark:text-[#1c1b1b] py-4 text-xs font-label uppercase tracking-[0.2em] hover:bg-primary dark:hover:bg-primary-container transition-colors">
+                    Secure Checkout
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#f6f3f2] dark:bg-[#121111] mt-24">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-20 max-w-[1440px] mx-auto">
+            <div class="col-span-1 md:col-span-1">
+                <h3 class="text-3xl font-serif italic mb-8 tracking-tight">Janka</h3>
+                <p class="text-sm tracking-wide text-on-surface-variant leading-loose">
+                    Defining the essence of luxury through architectural design and timeless heritage. We believe every piece tells a story worth curation.
+                </p>
+            </div>
+            <div>
+                <h4 class="font-label text-xs uppercase tracking-widest mb-8 text-primary">Shop</h4>
+                <ul class="space-y-4">
+                    <li><a class="text-sm tracking-wide text-on-surface-variant hover:text-on-surface transition-colors" href="catalogue.html">All Jewellery</a></li>
+                    <li><a class="text-sm tracking-wide text-on-surface-variant hover:text-on-surface transition-colors" href="catalogue.html">Bridal Collection</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-label text-xs uppercase tracking-widest mb-8 text-primary">Support</h4>
+                <ul class="space-y-4">
+                    <li><a class="text-sm tracking-wide text-on-surface-variant hover:text-on-surface transition-colors" href="contact.html">Contact Us</a></li>
+                    <li><a class="text-sm tracking-wide text-on-surface-variant hover:text-on-surface transition-colors" href="feedback.html">Feedback</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="border-t border-surface-variant/20 px-12 py-8 max-w-[1440px] mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+            <span class="text-xs tracking-wide text-on-surface-variant">© 2026 Janka. All Rights Reserved.</span>
+        </div>
+    </footer>
+
+    <script src="js/products.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
+</body>
+</html>
