@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Janka Creations — System Architecture</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&family=Courier+Prime&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #ffffff;
+            color: #1a1a2e;
+            padding: 40px 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 6px;
+            letter-spacing: 0.5px;
+        }
+        .subtitle {
+            text-align: center;
+            font-size: 13px;
+            color: #555;
+            margin-bottom: 35px;
+            font-style: italic;
+        }
+
+        .layer {
+            border: 2px solid #2c3e50;
+            border-radius: 8px;
+            padding: 18px 20px 14px;
+            margin-bottom: 10px;
+            position: relative;
+            background: #fafbfc;
+        }
+        .layer-title {
+            position: absolute;
+            top: -12px;
+            left: 18px;
+            background: #fff;
+            padding: 0 10px;
+            font-size: 13px;
+            font-weight: 700;
+            color: #2c3e50;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .boxes {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .box {
+            border: 1.5px solid #34495e;
+            border-radius: 5px;
+            padding: 8px 12px;
+            font-size: 11px;
+            text-align: center;
+            background: #fff;
+            min-width: 110px;
+        }
+        .box strong {
+            display: block;
+            font-size: 12px;
+            margin-bottom: 3px;
+            color: #1a1a2e;
+        }
+        .box .detail {
+            font-size: 9.5px;
+            color: #666;
+            line-height: 1.4;
+        }
+
+        .box.browser {
+            border-color: #2980b9;
+            background: #eaf2f8;
+        }
+        .box.html-page {
+            border-color: #e67e22;
+            background: #fef5e7;
+        }
+        .box.css-res {
+            border-color: #8e44ad;
+            background: #f4ecf7;
+        }
+        .box.js-mod {
+            border-color: #27ae60;
+            background: #eafaf1;
+        }
+        .box.storage {
+            border-color: #f39c12;
+            background: #fef9e7;
+            border-style: dashed;
+        }
+        .box.db-table {
+            border-color: #c0392b;
+            background: #fdedec;
+        }
+
+        .arrow-container {
+            text-align: center;
+            padding: 6px 0;
+            font-size: 11px;
+            color: #7f8c8d;
+        }
+        .arrow-container .arrow-symbol {
+            font-size: 20px;
+            line-height: 1;
+            display: block;
+            color: #2c3e50;
+        }
+        .arrow-container .arrow-label {
+            font-size: 10px;
+            font-style: italic;
+        }
+
+        .dashed-separator {
+            border-top: 2px dashed #aaa;
+            margin: 14px 0 8px;
+            position: relative;
+        }
+        .dashed-separator .sep-label {
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #fafbfc;
+            padding: 0 12px;
+            font-size: 10px;
+            color: #888;
+            font-style: italic;
+            white-space: nowrap;
+        }
+
+        .side-notes {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .side-note {
+            border: 1.5px solid #7f8c8d;
+            border-radius: 5px;
+            padding: 8px 14px;
+            font-size: 10.5px;
+            background: #f8f9fa;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .side-note .icon {
+            font-size: 16px;
+        }
+
+        .fk-note {
+            font-size: 10px;
+            color: #777;
+            text-align: center;
+            margin-top: 8px;
+            font-style: italic;
+        }
+
+        .dependency-note {
+            font-size: 10px;
+            color: #555;
+            text-align: center;
+            margin-top: 6px;
+            font-style: italic;
+        }
+
+        .section-desc {
+            font-size: 10.5px;
+            color: #666;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .fig-caption {
+            text-align: center;
+            margin-top: 25px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #333;
+        }
+        .fig-sub {
+            text-align: center;
+            font-size: 10px;
+            color: #888;
+            margin-top: 3px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>System Architecture — Janka Creations</h1>
+    <p class="subtitle">Luxury Jewellery E-Commerce Web Application</p>
+
+    <!-- Layer 1: Client -->
+    <div class="layer">
+        <span class="layer-title">Layer 1 — Client (Browser)</span>
+        <div class="boxes">
+            <div class="box browser">
+                <strong>User's Web Browser</strong>
+                <span class="detail">Google Chrome / Mozilla Firefox / Microsoft Edge<br>Renders HTML, CSS, executes JavaScript</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="arrow-container">
+        <span class="arrow-symbol">&#8595;</span>
+        <span class="arrow-label">HTTP Request / Response (Static File Serving)</span>
+    </div>
+
+    <!-- Layer 2: Presentation -->
+    <div class="layer">
+        <span class="layer-title">Layer 2 — Presentation (HTML Pages)</span>
+        <p class="section-desc">8 interconnected HTML pages forming the complete user interface</p>
+        <div class="boxes">
+            <div class="box html-page"><strong>index.html</strong><span class="detail">Homepage<br>Hero, Categories,<br>Featured Products</span></div>
+            <div class="box html-page"><strong>catalogue.html</strong><span class="detail">Full Product<br>Catalogue Grid<br>(20 items)</span></div>
+            <div class="box html-page"><strong>search.html</strong><span class="detail">Search &amp;<br>Category Filter<br>Interface</span></div>
+            <div class="box html-page"><strong>product.html</strong><span class="detail">Individual<br>Product Detail<br>View</span></div>
+        </div>
+        <div class="boxes" style="margin-top: 10px;">
+            <div class="box html-page"><strong>cart.html</strong><span class="detail">Shopping Cart<br>Qty Control &amp;<br>Checkout</span></div>
+            <div class="box html-page"><strong>contact.html</strong><span class="detail">Contact Form<br>Name, Email,<br>Message Fields</span></div>
+            <div class="box html-page"><strong>feedback.html</strong><span class="detail">Feedback Form<br>Star Rating &amp;<br>Comments</span></div>
+            <div class="box html-page"><strong>REGISTER.html</strong><span class="detail">User Registration<br>Password Strength<br>Meter</span></div>
+        </div>
+
+        <div style="margin-top: 14px;">
+            <p class="section-desc">External Resources &amp; Stylesheets</p>
+            <div class="boxes">
+                <div class="box css-res"><strong>style.css + responsive.css</strong><span class="detail">Custom styles, media queries,<br>mobile-first breakpoints</span></div>
+                <div class="box css-res"><strong>TailwindCSS (CDN)</strong><span class="detail">Utility-first framework<br>with custom theme config</span></div>
+                <div class="box css-res"><strong>Google Fonts</strong><span class="detail">Noto Serif (headings)<br>Manrope (body text)</span></div>
+                <div class="box css-res"><strong>Material Symbols</strong><span class="detail">Icon font library<br>(Outlined variant)</span></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="arrow-container">
+        <span class="arrow-symbol">&#8595; &#8593;</span>
+        <span class="arrow-label">DOM Manipulation / Event Handling / Dynamic Rendering</span>
+    </div>
+
+    <!-- Layer 3: Application Logic -->
+    <div class="layer">
+        <span class="layer-title">Layer 3 — Application Logic (JavaScript Modules)</span>
+        <p class="section-desc">5 modular JavaScript files handling all client-side business logic</p>
+        <div class="boxes">
+            <div class="box js-mod">
+                <strong>products.js</strong>
+                <span class="detail">Static product data store<br>20 items across 4 categories<br>Exposes window.productsData</span>
+            </div>
+            <div class="box js-mod">
+                <strong>main.js</strong>
+                <span class="detail">Core orchestrator<br>Featured display, catalogue render<br>Theme toggle, cart counter, mobile menu</span>
+            </div>
+            <div class="box js-mod">
+                <strong>cart.js</strong>
+                <span class="detail">Cart management engine<br>Add / Remove / Update qty<br>Total calculation, checkout flow</span>
+            </div>
+        </div>
+        <div class="boxes" style="margin-top: 10px;">
+            <div class="box js-mod">
+                <strong>search.js</strong>
+                <span class="detail">Real-time search engine<br>Keyword filter + category filter<br>Live results as user types</span>
+            </div>
+            <div class="box js-mod">
+                <strong>form-validation.js</strong>
+                <span class="detail">Input validation &amp; security<br>Regex checks (email, phone, name, password)<br>XSS sanitization, password strength meter</span>
+            </div>
+        </div>
+        <p class="dependency-note">&#8594; products.js is loaded first and feeds data into main.js, search.js, and cart.js via window.productsData</p>
+    </div>
+
+    <div class="arrow-container">
+        <span class="arrow-symbol">&#8595; &#8593;</span>
+        <span class="arrow-label">Read / Write Operations (JSON serialization via localStorage API)</span>
+    </div>
+
+    <!-- Layer 4: Client Storage -->
+    <div class="layer">
+        <span class="layer-title">Layer 4 — Client-Side Persistent Storage</span>
+        <div class="boxes">
+            <div class="box storage">
+                <strong>localStorage</strong>
+                <span class="detail">Browser-native key-value storage</span>
+            </div>
+            <div class="box storage">
+                <strong>janka_cart</strong>
+                <span class="detail">Stores cart items as JSON array<br>{id, name, price, image, quantity}</span>
+            </div>
+            <div class="box storage">
+                <strong>janka_theme</strong>
+                <span class="detail">Persists user's theme preference<br>"dark" or "light" mode string</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="arrow-container" style="padding: 10px 0;">
+        <div class="dashed-separator">
+            <span class="sep-label">▼ Future Backend Integration Layer (Node.js / Express / PHP) ▼</span>
+        </div>
+    </div>
+
+    <!-- Layer 5: Database Schema -->
+    <div class="layer" style="border-style: dashed; background: #f9f9f9;">
+        <span class="layer-title">Layer 5 — Database Schema (PostgreSQL)</span>
+        <p class="section-desc">Relational schema designed for backend integration — currently serves as data blueprint</p>
+        <div class="boxes">
+            <div class="box db-table">
+                <strong>categories</strong>
+                <span class="detail">category_id (PK, SERIAL)<br>category_name VARCHAR(50)<br>description TEXT</span>
+            </div>
+            <div class="box db-table">
+                <strong>products</strong>
+                <span class="detail">product_id (PK, SERIAL)<br>product_name VARCHAR(100)<br>price DECIMAL(10,2)<br>category_id (FK → categories)<br>image_url, stock_quantity</span>
+            </div>
+            <div class="box db-table">
+                <strong>contact_submissions</strong>
+                <span class="detail">submission_id (PK, SERIAL)<br>name VARCHAR(100)<br>email VARCHAR(100)<br>message TEXT<br>submission_date TIMESTAMP</span>
+            </div>
+            <div class="box db-table">
+                <strong>user_registrations</strong>
+                <span class="detail">user_id (PK, SERIAL)<br>full_name VARCHAR(100)<br>email VARCHAR(100) UNIQUE<br>phone VARCHAR(15)</span>
+            </div>
+        </div>
+        <p class="fk-note">FK Relationship: products.category_id &#8594; categories.category_id (One-to-Many)</p>
+    </div>
+
+    <!-- Side Annotations -->
+    <div class="side-notes">
+        <div class="side-note"><span class="icon">🌗</span> Dark / Light Mode Toggle with localStorage persistence</div>
+        <div class="side-note"><span class="icon">🛡️</span> XSS Prevention via input sanitization (HTML entity encoding)</div>
+        <div class="side-note"><span class="icon">📱</span> Responsive Design — mobile-first with CSS media queries</div>
+        <div class="side-note"><span class="icon">📦</span> 20 Products across 4 Categories: Rings, Necklaces, Earrings, Bracelets</div>
+        <div class="side-note"><span class="icon">🔑</span> Password Strength Meter with real-time visual feedback</div>
+        <div class="side-note"><span class="icon">⭐</span> Interactive Star Rating system for feedback</div>
+    </div>
+
+    <p class="fig-caption">Fig 1. System Architecture Diagram — Janka Creations E-Commerce Platform</p>
+    <p class="fig-sub">Five-layer architecture: Client → Presentation → Application Logic → Storage → Database</p>
+
+</body>
+</html>
